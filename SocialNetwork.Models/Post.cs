@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
 
-namespace FaceBook.Models
+namespace SocialNetwork.Models
 {
     public class Post
     {
 
 
         private IEnumerable<Comment> comments;
+
+
+        public Post()
+        {
+            this.comments = new HashSet<Comment>();
+        }
 
         [Key]
         public int Id { get; set; }
@@ -29,9 +32,6 @@ namespace FaceBook.Models
         public int WallId { get; set; }
         public virtual IEnumerable<Wall> Walls { get; set; }
 
-        public Post()
-        {
-            this.comments = new HashSet<Comment>();
-        }
+       
     }
 }
