@@ -56,6 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chat.cs" />
+    <Compile Include="ChatRoom.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="CommentLike.cs" />
     <Compile Include="Group.cs" />

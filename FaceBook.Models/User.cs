@@ -12,7 +12,12 @@ namespace FaceBook.Models
 {
     public  class User: IdentityUser
     {
+        private ICollection<Chat> chats;
 
+        public User()
+        {
+            this.chats= new HashSet<Chat>();
+        }
 
         public int WallId { get; set; }
         public virtual Wall Wall { get; set; }
@@ -34,6 +39,12 @@ namespace FaceBook.Models
 
         public int FriendId { get; set; }
         public virtual ICollection<User> Friends { get; set; }
+
+        public virtual ICollection<Chat> Chats
+        {
+            get { return this.chats; }
+            set { this.chats = value; }
+        }
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(

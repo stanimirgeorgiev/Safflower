@@ -12,3 +12,17 @@ c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bi
 c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\EntityFramework.SqlServer.xml
 c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\FaceBook.Models.dll.config
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\FaceBook.Models.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\FaceBook.Models.pdb
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\EntityFramework.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\EntityFramework.xml
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\obj\Debug\FaceBook.Models.csprojResolveAssemblyReference.cache
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\obj\Debug\FaceBook.Models.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Models\obj\Debug\FaceBook.Models.pdb

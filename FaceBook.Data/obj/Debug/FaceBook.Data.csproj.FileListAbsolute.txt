@@ -14,3 +14,19 @@ c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Data\bin\
 c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Data\obj\Debug\FaceBook.Data.csprojResolveAssemblyReference.cache
 c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Data\obj\Debug\FaceBook.Data.dll
 c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Data\obj\Debug\FaceBook.Data.pdb
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\FaceBook.Data.dll.config
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\FaceBook.Data.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\FaceBook.Data.pdb
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\EntityFramework.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\FaceBook.Models.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\FaceBook.Models.pdb
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\EntityFramework.xml
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\obj\Debug\FaceBook.Data.csprojResolveAssemblyReference.cache
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\obj\Debug\FaceBook.Data.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Data\obj\Debug\FaceBook.Data.pdb
