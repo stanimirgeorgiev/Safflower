@@ -8,7 +8,6 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using SocialNetwork.Data;
 using SocialNetwork.Services.Providers;
 using SocialNetwork.Services.Models;
 
@@ -24,7 +23,7 @@ namespace SocialNetwork.Services
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context and user manager to use a single instance per request
-            app.CreatePerOwinContext(SocialNetworkContext.Create);
+            app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
 
             // Enable the application to use a cookie to store information for the signed in user
@@ -40,7 +39,6 @@ namespace SocialNetwork.Services
                 Provider = new ApplicationOAuthProvider(PublicClientId),
                 AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
-                // In production mode set AllowInsecureHttp = false
                 AllowInsecureHttp = true
             };
 
