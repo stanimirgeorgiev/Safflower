@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceBook.Models", "FaceBook.Models\FaceBook.Models.csproj", "{24D7F33A-932F-44AF-AD4B-58D59E108937}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceBook.Data", "FaceBook.Data\FaceBook.Data.csproj", "{45B9E360-0F6F-46C5-B5DE-E05D5B1E578D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceBook.Services", "FaceBook.Services\FaceBook.Services.csproj", "{3FB4E206-1799-407B-A72E-5FEBF104EFDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24D7F33A-932F-44AF-AD4B-58D59E108937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D7F33A-932F-44AF-AD4B-58D59E108937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D7F33A-932F-44AF-AD4B-58D59E108937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D7F33A-932F-44AF-AD4B-58D59E108937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B9E360-0F6F-46C5-B5DE-E05D5B1E578D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B9E360-0F6F-46C5-B5DE-E05D5B1E578D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B9E360-0F6F-46C5-B5DE-E05D5B1E578D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B9E360-0F6F-46C5-B5DE-E05D5B1E578D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB4E206-1799-407B-A72E-5FEBF104EFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB4E206-1799-407B-A72E-5FEBF104EFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB4E206-1799-407B-A72E-5FEBF104EFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB4E206-1799-407B-A72E-5FEBF104EFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

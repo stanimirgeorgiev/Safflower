@@ -1,0 +1,14 @@
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\FaceBook.Models.dll
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\FaceBook.Models.pdb
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\obj\Debug\FaceBook.Models.csprojResolveAssemblyReference.cache
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\obj\Debug\FaceBook.Models.dll
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\obj\Debug\FaceBook.Models.pdb
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\FaceBook.Models.dll.config
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\EntityFramework.dll
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\EntityFramework.xml
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+c:\users\kiril\documents\visual studio 2013\Projects\FaceBook\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
