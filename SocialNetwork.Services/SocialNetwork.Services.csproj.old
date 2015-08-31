@@ -122,6 +122,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Fakes Include="Fakes\WebGrease.fakes" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -159,6 +160,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SocialNetwork.Data\SocialNetwork.Data.csproj">
+      <Project>{CD71B9B6-8F55-44D5-A270-22005DD6F4B8}</Project>
+      <Name>SocialNetwork.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocialNetwork.Models\SocialNetwork.Models.csproj">
+      <Project>{5521716F-06F6-4FCF-896A-ADF3A26CA000}</Project>
+      <Name>SocialNetwork.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
