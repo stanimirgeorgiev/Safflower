@@ -21,5 +21,7 @@ namespace FaceBook.Data
         public DbSet<PostLike> PostLikes { get; set; }
         public DbSet<CommentLike> CommentLikes { get; set; }
         public DbSet<Group> Groups { get; set; }
+        public DbSet<Chat> Chats { get; set; }
+        public DbSet<ChatRoom> ChatRooms { get; set; }
     }
 }
