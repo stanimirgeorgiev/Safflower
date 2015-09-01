@@ -10,10 +10,18 @@ namespace FaceBook.Models
         [Key]
         [Required]
         public int Id { get; set; }
+
         public int ChatRoomId  { get; set; }
+        public virtual ChatRoom ChatRoom { get; set; }
+
         public string ChatPost { get; set; }
+
         public int UserId { get; set; }
+        public virtual User User { get; set; }
+
         public byte IsGuest { get; set; }
+        //?? Byte 
+
         public DateTime CreatedOn { get; set; }
 
     }

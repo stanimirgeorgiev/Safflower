@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using FaceBook.Data;
 
 namespace FaceBook.Services.Controllers
 {
@@ -11,9 +12,12 @@ namespace FaceBook.Services.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var contex = new FaceBookDb();
+            var users = contex.Users.ToList();
+
+            return Ok(users);
         }
 
         // GET api/values/5

@@ -12,8 +12,8 @@ namespace FaceBook.Models
     {
         public int Id { get; set; }
 
-        public virtual int UserId { get; set; }
-
+        public int UserId { get; set; }
+        public User User { get; set; }
 
     }
 }
