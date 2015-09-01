@@ -46,3 +46,19 @@ C:\Users\Kiril\Documents\Visual Studio 2013\Projects\Safflower\FaceBook.Data\bin
 C:\Users\Kiril\Documents\Visual Studio 2013\Projects\Safflower\FaceBook.Data\obj\Debug\FaceBook.Data.csprojResolveAssemblyReference.cache
 C:\Users\Kiril\Documents\Visual Studio 2013\Projects\Safflower\FaceBook.Data\obj\Debug\FaceBook.Data.dll
 C:\Users\Kiril\Documents\Visual Studio 2013\Projects\Safflower\FaceBook.Data\obj\Debug\FaceBook.Data.pdb
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\FaceBook.Data.dll.config
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\FaceBook.Data.dll
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\FaceBook.Data.pdb
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\EntityFramework.dll
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\FaceBook.Models.dll
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\FaceBook.Models.pdb
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\EntityFramework.xml
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\obj\Debug\FaceBook.Data.csprojResolveAssemblyReference.cache
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\obj\Debug\FaceBook.Data.dll
+C:\Users\mary\Desktop\prog\trunk\FaceBook.Data\obj\Debug\FaceBook.Data.pdb

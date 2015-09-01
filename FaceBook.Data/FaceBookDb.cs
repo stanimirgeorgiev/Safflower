@@ -23,5 +23,16 @@ namespace FaceBook.Data
         public DbSet<Group> Groups { get; set; }
         public DbSet<Chat> Chats { get; set; }
         public DbSet<ChatRoom> ChatRooms { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .HasRequired(u => u.Wall)
+                .WithRequiredPrincipal(w => w.User)
+                .WillCascadeOnDelete(false);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
+    
 }

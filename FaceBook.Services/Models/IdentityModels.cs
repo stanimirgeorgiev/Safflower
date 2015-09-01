@@ -18,16 +18,16 @@ namespace FaceBook.Services.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class FaceBookDb : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+        public FaceBookDb()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
-        public static ApplicationDbContext Create()
+
+        public static FaceBookDb Create()
         {
-            return new ApplicationDbContext();
+            return new FaceBookDb();
         }
     }
 }
