@@ -26,10 +26,8 @@ namespace FaceBook.Models
             set { this.chats = value; }
         }
 
-        [Required]
-        //Int is required, because is not nullable type
-        public virtual int UserId { get; set; }
-        public User User { get; set; }
+        public string UserId { get; set; }
+        public virtual User User { get; set; }
 
         [DefaultValue(1)]
         public byte FriendsView

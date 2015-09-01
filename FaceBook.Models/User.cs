@@ -32,6 +32,7 @@ namespace FaceBook.Models
             this.friends = new HashSet<User>();
         }
 
+      
 
         public int WallId { get; set; }
         public virtual Wall Wall { get; set; }

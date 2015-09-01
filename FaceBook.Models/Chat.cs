@@ -16,14 +16,11 @@ namespace FaceBook.Models
 
         public string ChatPost { get; set; }
 
-        public int UserId { get; set; }
+
+        public string UserId { get; set; }
         public virtual User User { get; set; }
 
         public byte IsGuest { get; set; }
-//<<<<<<< HEAD
-//=======
-//        //?? Byte 
-//>>>>>>> f383d719fc7197e666853612656f8a5154ee1bde
 
         public DateTime CreatedOn { get; set; }
 
