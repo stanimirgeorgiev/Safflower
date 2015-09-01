@@ -258,3 +258,7 @@ C:\Users\mary\Desktop\prog\trunk\FaceBook.Services\bin\System.Web.Http.Owin.xml
 C:\Users\mary\Desktop\prog\trunk\FaceBook.Services\obj\Debug\FaceBook.Services.csprojResolveAssemblyReference.cache
 C:\Users\mary\Desktop\prog\trunk\FaceBook.Services\obj\Debug\FaceBook.Services.dll
 C:\Users\mary\Desktop\prog\trunk\FaceBook.Services\obj\Debug\FaceBook.Services.pdb
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Services\bin\FaceBook.Data.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Services\bin\FaceBook.Models.dll
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Services\bin\FaceBook.Data.pdb
+D:\SOFTUNI\ShareXubuntu\Web&Cloud\Teamwork\01.project\Safflower\FaceBook.Services\bin\FaceBook.Models.pdb

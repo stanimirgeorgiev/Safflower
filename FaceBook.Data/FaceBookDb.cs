@@ -1,3 +1,4 @@
+using System.Data.Entity.ModelConfiguration.Conventions;
 using FaceBook.Data.Migrations;
 using FaceBook.Models;
 
@@ -26,6 +27,9 @@ namespace FaceBook.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
             modelBuilder.Entity<User>()
                 .HasRequired(u => u.Wall)
                 .WithRequiredPrincipal(w => w.User)

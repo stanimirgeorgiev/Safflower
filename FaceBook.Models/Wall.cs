@@ -15,9 +15,10 @@ namespace FaceBook.Models
         {
             this.posts = new HashSet<Post>();
         }
-
+        [Key]
+        [Required]
         public int Id { get; set; }
-
+        [Required]
         public string UserId { get; set; }
         public virtual User User { get; set; }
 

@@ -25,7 +25,7 @@ namespace FaceBook.Models
             get { return this.chats; }
             set { this.chats = value; }
         }
-
+        [Required]
         public string UserId { get; set; }
         public virtual User User { get; set; }
 
