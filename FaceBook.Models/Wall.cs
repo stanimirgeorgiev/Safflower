@@ -9,11 +9,22 @@ namespace FaceBook.Models
 {
     public class Wall
     {
+        private ICollection<Post> posts;
+
+        public Wall()
+        {
+            this.posts = new HashSet<Post>();
+        }
+
         public int Id { get; set; }
 
         public int UserId { get; set; }
+        public virtual User User { get; set; }
 
-        public int PostId { get; set; }
-        public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<Post> Posts
+        {
+            get { return this.posts; }
+            set { this.posts = value; }
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace FaceBook.Models
 {
     public class CommentLike:Like
     {
-        public virtual int CommentId { get; set; }
+        public int CommentId { get; set; }
+        public Comment Comment { get; set; }
     }
 }

@@ -8,6 +8,7 @@ namespace FaceBook.Models
 {
     public class PostLike:Like
     {
-        public virtual int PostId { get; set; }
+        public int PostId { get; set; }
+        public Post Post { get; set; }  
     }
 }

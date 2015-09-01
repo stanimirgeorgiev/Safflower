@@ -10,28 +10,31 @@ namespace FaceBook.Models
     {
 
 
-        private IEnumerable<Comment> comments;
-
+        private ICollection<Comment> comments;
+        private ICollection<Wall> walls;
+        
         [Key]
         public int Id { get; set; }
 
         public int UserId { get; set; }
         public virtual User User { get; set; }
 
-        public int CommentId { get; set; }
-
-        public virtual IEnumerable<Comment> Comments
+        public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
         }
 
-        public int WallId { get; set; }
-        public virtual IEnumerable<Wall> Walls { get; set; }
+        public virtual ICollection<Wall> Walls
+        {
+            get { return this.walls; }
+            set { this.walls = value; }
+        }
 
         public Post()
         {
             this.comments = new HashSet<Comment>();
+            this.walls = new HashSet<Wall>();
         }
     }
 }

@@ -7,14 +7,21 @@ namespace FaceBook.Models
 {
     public class Group
     {
+        private ICollection<User> users;
+
+        public Group()
+        {
+            this.users = new HashSet<User>();
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public int UserId { get; set; }
-        public virtual IEnumerable<User> Users { get; set; }
+        public virtual ICollection<User> Users { get; set; }
 
-        public virtual int  WallId { get; set; }
+        public int  WallId { get; set; }
+        public virtual Wall Wall { get; set; }
 
     }
 }

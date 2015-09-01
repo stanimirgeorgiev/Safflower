@@ -13,32 +13,63 @@ namespace FaceBook.Models
     public  class User: IdentityUser
     {
         private ICollection<Chat> chats;
+        private ICollection<Post> posts;
+        private ICollection<Comment> comments;
+        private ICollection<PostLike> postLikes;
+        private ICollection<CommentLike> commentLikes;
+        private ICollection<Group> groups;
+        private ICollection<User> friends;
 
         public User()
         {
             this.chats= new HashSet<Chat>();
+            this.posts = new HashSet<Post>();
+            this.comments = new HashSet<Comment>();
+            this.postLikes = new List<PostLike>();
+            this.commentLikes = new HashSet<CommentLike>();
+            this.groups = new HashSet<Group>();
+            this.friends = new HashSet<User>();
         }
+
 
         public int WallId { get; set; }
         public virtual Wall Wall { get; set; }
 
-        public int PostId { get; set; }
-        public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<Post> Posts
+        {
+            get { return this.posts; }
+            set { this.posts = value; }
+        }
 
-        public int CommentId { get; set; }
-        public virtual ICollection<Comment> Coments { get; set; }
+        public virtual ICollection<Comment> Comments
+        {
+            get { return this.comments; }
+            set { this.comments = value; }
+        }
 
-        public int PostLikeId { get; set; }
-        public virtual ICollection<PostLike> PostLikes { get; set; }
+        public virtual ICollection<PostLike> PostLikes
+        {
+            get { return this.postLikes; }
+            set { this.postLikes = value; }
+        }
 
-        public int CommentLikeId { get; set; }
-        public virtual ICollection<CommentLike> CommentLikes { get; set; }
+        public virtual ICollection<CommentLike> CommentLikes
+        {
+            get { return this.commentLikes; }
+            set { this.commentLikes = value; }
+        }
 
-        public int GroupId { get; set; }
-        public virtual ICollection<Group> Groups { get; set; }
+        public virtual ICollection<Group> Groups
+        {
+            get { return this.groups; }
+            set { this.groups = value; }
+        }
 
-        public int FriendId { get; set; }
-        public virtual ICollection<User> Friends { get; set; }
+        public virtual ICollection<User> Friends
+        {
+            get { return this.friends; }
+            set { this.friends = value; }
+        }
 
         public virtual ICollection<Chat> Chats
         {

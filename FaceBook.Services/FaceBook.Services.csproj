@@ -276,6 +276,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FaceBook.Data\FaceBook.Data.csproj">
+      <Project>{45b9e360-0f6f-46c5-b5de-e05d5b1e578d}</Project>
+      <Name>FaceBook.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FaceBook.Models\FaceBook.Models.csproj">
+      <Project>{24d7f33a-932f-44af-ad4b-58d59e108937}</Project>
+      <Name>FaceBook.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
