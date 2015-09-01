@@ -14,6 +14,7 @@ namespace FaceBook.Services.Controllers
         // GET api/values
         public IHttpActionResult Get()
         {
+            var a = 1;
             var contex = new FaceBookDb();
             var users = contex.Users.ToList();
 

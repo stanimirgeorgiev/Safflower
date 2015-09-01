@@ -54,3 +54,17 @@ C:\Users\mary\Desktop\prog\trunk\FaceBook.Models\bin\Debug\EntityFramework.xml
 C:\Users\mary\Desktop\prog\trunk\FaceBook.Models\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\mary\Desktop\prog\trunk\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\mary\Desktop\prog\trunk\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\FaceBook.Models.dll.config
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\FaceBook.Models.dll
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\FaceBook.Models.pdb
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\EntityFramework.dll
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\EntityFramework.xml
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\obj\Debug\FaceBook.Models.csprojResolveAssemblyReference.cache
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\obj\Debug\FaceBook.Models.dll
+C:\Users\mary\Desktop\pr\trunk\FaceBook.Models\obj\Debug\FaceBook.Models.pdb

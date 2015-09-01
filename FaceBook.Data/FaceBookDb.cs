@@ -32,7 +32,7 @@ namespace FaceBook.Data
 
             modelBuilder.Entity<User>()
                 .HasRequired(u => u.Wall)
-                .WithRequiredPrincipal(w => w.User)
+                .WithOptional(w => w.User)
                 .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
