@@ -33,6 +33,11 @@ namespace FaceBook.Data
 
             base.OnModelCreating(modelBuilder);
         }
+
+        public static FaceBookDb Create()
+        {
+            return new FaceBookDb();
+        }
     }
     
 }
