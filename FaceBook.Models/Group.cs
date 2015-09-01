@@ -18,7 +18,11 @@ namespace FaceBook.Models
 
         public string Name { get; set; }
 
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<User> Users
+        {
+            get { return this.users; }
+            set { this.users = value; }
+        }
 
         public int  WallId { get; set; }
         public virtual Wall Wall { get; set; }
