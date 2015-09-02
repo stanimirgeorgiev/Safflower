@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
+using FaceBook.Data;
 using FaceBook.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -31,7 +33,7 @@ namespace FaceBook.Services.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager,
+        public AccountController(ApplicationUserManager userManager ,
             ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
         {
             UserManager = userManager;
@@ -61,8 +63,8 @@ namespace FaceBook.Services.Controllers
 
             return new UserInfoViewModel
             {
-                Email = User.Identity.GetUserName(),
-                HasRegistered = externalLogin == null,
+                Email = User.Identity.GetUserName() ,
+                HasRegistered = externalLogin == null ,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
         }
@@ -77,41 +79,41 @@ namespace FaceBook.Services.Controllers
 
         // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
         [Route("ManageInfo")]
-        public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
+        public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl , bool generateState = false)
         {
             IdentityUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
 
-            if (user == null)
+            if(user == null)
             {
                 return null;
             }
 
             List<UserLoginInfoViewModel> logins = new List<UserLoginInfoViewModel>();
 
-            foreach (IdentityUserLogin linkedAccount in user.Logins)
+            foreach(IdentityUserLogin linkedAccount in user.Logins)
             {
                 logins.Add(new UserLoginInfoViewModel
                 {
-                    LoginProvider = linkedAccount.LoginProvider,
+                    LoginProvider = linkedAccount.LoginProvider ,
                     ProviderKey = linkedAccount.ProviderKey
                 });
             }
 
-            if (user.PasswordHash != null)
+            if(user.PasswordHash != null)
             {
                 logins.Add(new UserLoginInfoViewModel
                 {
-                    LoginProvider = LocalLoginProvider,
-                    ProviderKey = user.UserName,
+                    LoginProvider = LocalLoginProvider ,
+                    ProviderKey = user.UserName ,
                 });
             }
 
             return new ManageInfoViewModel
             {
-                LocalLoginProvider = LocalLoginProvider,
-                Email = user.UserName,
-                Logins = logins,
-                ExternalLoginProviders = GetExternalLogins(returnUrl, generateState)
+                LocalLoginProvider = LocalLoginProvider ,
+                Email = user.UserName ,
+                Logins = logins ,
+                ExternalLoginProviders = GetExternalLogins(returnUrl , generateState)
             };
         }
 
@@ -119,15 +121,15 @@ namespace FaceBook.Services.Controllers
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
         {
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword,
+            IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId() , model.OldPassword ,
                 model.NewPassword);
-            
-            if (!result.Succeeded)
+
+            if(!result.Succeeded)
             {
                 return GetErrorResult(result);
             }
@@ -139,14 +141,14 @@ namespace FaceBook.Services.Controllers
         [Route("SetPassword")]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            IdentityResult result = await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
+            IdentityResult result = await UserManager.AddPasswordAsync(User.Identity.GetUserId() , model.NewPassword);
 
-            if (!result.Succeeded)
+            if(!result.Succeeded)
             {
                 return GetErrorResult(result);
             }
@@ -158,7 +160,7 @@ namespace FaceBook.Services.Controllers
         [Route("AddExternalLogin")]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
         {
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -167,7 +169,7 @@ namespace FaceBook.Services.Controllers
 
             AuthenticationTicket ticket = AccessTokenFormat.Unprotect(model.ExternalAccessToken);
 
-            if (ticket == null || ticket.Identity == null || (ticket.Properties != null
+            if(ticket == null || ticket.Identity == null || (ticket.Properties != null
                 && ticket.Properties.ExpiresUtc.HasValue
                 && ticket.Properties.ExpiresUtc.Value < DateTimeOffset.UtcNow))
             {
@@ -176,15 +178,15 @@ namespace FaceBook.Services.Controllers
 
             ExternalLoginData externalData = ExternalLoginData.FromIdentity(ticket.Identity);
 
-            if (externalData == null)
+            if(externalData == null)
             {
                 return BadRequest("The external login is already associated with an account.");
             }
 
-            IdentityResult result = await UserManager.AddLoginAsync(User.Identity.GetUserId(),
-                new UserLoginInfo(externalData.LoginProvider, externalData.ProviderKey));
+            IdentityResult result = await UserManager.AddLoginAsync(User.Identity.GetUserId() ,
+                new UserLoginInfo(externalData.LoginProvider , externalData.ProviderKey));
 
-            if (!result.Succeeded)
+            if(!result.Succeeded)
             {
                 return GetErrorResult(result);
             }
@@ -196,24 +198,24 @@ namespace FaceBook.Services.Controllers
         [Route("RemoveLogin")]
         public async Task<IHttpActionResult> RemoveLogin(RemoveLoginBindingModel model)
         {
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
             IdentityResult result;
 
-            if (model.LoginProvider == LocalLoginProvider)
+            if(model.LoginProvider == LocalLoginProvider)
             {
                 result = await UserManager.RemovePasswordAsync(User.Identity.GetUserId());
             }
             else
             {
-                result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(),
-                    new UserLoginInfo(model.LoginProvider, model.ProviderKey));
+                result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId() ,
+                    new UserLoginInfo(model.LoginProvider , model.ProviderKey));
             }
 
-            if (!result.Succeeded)
+            if(!result.Succeeded)
             {
                 return GetErrorResult(result);
             }
@@ -225,53 +227,53 @@ namespace FaceBook.Services.Controllers
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]
-        [Route("ExternalLogin", Name = "ExternalLogin")]
-        public async Task<IHttpActionResult> GetExternalLogin(string provider, string error = null)
+        [Route("ExternalLogin" , Name = "ExternalLogin")]
+        public async Task<IHttpActionResult> GetExternalLogin(string provider , string error = null)
         {
-            if (error != null)
+            if(error != null)
             {
                 return Redirect(Url.Content("~/") + "#error=" + Uri.EscapeDataString(error));
             }
 
-            if (!User.Identity.IsAuthenticated)
+            if(!User.Identity.IsAuthenticated)
             {
-                return new ChallengeResult(provider, this);
+                return new ChallengeResult(provider , this);
             }
 
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
 
-            if (externalLogin == null)
+            if(externalLogin == null)
             {
                 return InternalServerError();
             }
 
-            if (externalLogin.LoginProvider != provider)
+            if(externalLogin.LoginProvider != provider)
             {
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-                return new ChallengeResult(provider, this);
+                return new ChallengeResult(provider , this);
             }
 
-            User user = await UserManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider,
+            User user = await UserManager.FindAsync(new UserLoginInfo(externalLogin.LoginProvider ,
                 externalLogin.ProviderKey));
 
             bool hasRegistered = user != null;
 
-            if (hasRegistered)
+            if(hasRegistered)
             {
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-                
-                 ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
-                    OAuthDefaults.AuthenticationType);
-                ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
+
+                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager ,
+                   OAuthDefaults.AuthenticationType);
+                ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager ,
                     CookieAuthenticationDefaults.AuthenticationType);
 
                 AuthenticationProperties properties = ApplicationOAuthProvider.CreateProperties(user.UserName);
-                Authentication.SignIn(properties, oAuthIdentity, cookieIdentity);
+                Authentication.SignIn(properties , oAuthIdentity , cookieIdentity);
             }
             else
             {
                 IEnumerable<Claim> claims = externalLogin.GetClaims();
-                ClaimsIdentity identity = new ClaimsIdentity(claims, OAuthDefaults.AuthenticationType);
+                ClaimsIdentity identity = new ClaimsIdentity(claims , OAuthDefaults.AuthenticationType);
                 Authentication.SignIn(identity);
             }
 
@@ -281,14 +283,14 @@ namespace FaceBook.Services.Controllers
         // GET api/Account/ExternalLogins?returnUrl=%2F&generateState=true
         [AllowAnonymous]
         [Route("ExternalLogins")]
-        public IEnumerable<ExternalLoginViewModel> GetExternalLogins(string returnUrl, bool generateState = false)
+        public IEnumerable<ExternalLoginViewModel> GetExternalLogins(string returnUrl , bool generateState = false)
         {
             IEnumerable<AuthenticationDescription> descriptions = Authentication.GetExternalAuthenticationTypes();
             List<ExternalLoginViewModel> logins = new List<ExternalLoginViewModel>();
 
             string state;
 
-            if (generateState)
+            if(generateState)
             {
                 const int strengthInBits = 256;
                 state = RandomOAuthStateGenerator.Generate(strengthInBits);
@@ -298,19 +300,19 @@ namespace FaceBook.Services.Controllers
                 state = null;
             }
 
-            foreach (AuthenticationDescription description in descriptions)
+            foreach(AuthenticationDescription description in descriptions)
             {
                 ExternalLoginViewModel login = new ExternalLoginViewModel
                 {
-                    Name = description.Caption,
-                    Url = Url.Route("ExternalLogin", new
+                    Name = description.Caption ,
+                    Url = Url.Route("ExternalLogin" , new
                     {
-                        provider = description.AuthenticationType,
-                        response_type = "token",
-                        client_id = Startup.PublicClientId,
-                        redirect_uri = new Uri(Request.RequestUri, returnUrl).AbsoluteUri,
+                        provider = description.AuthenticationType ,
+                        response_type = "token" ,
+                        client_id = Startup.PublicClientId ,
+                        redirect_uri = new Uri(Request.RequestUri , returnUrl).AbsoluteUri ,
                         state = state
-                    }),
+                    }) ,
                     State = state
                 };
                 logins.Add(login);
@@ -324,23 +326,43 @@ namespace FaceBook.Services.Controllers
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
         {
-            if (!ModelState.IsValid)
+            string outcome = "Proooobaaaa";
+            
+            try
             {
-                return BadRequest(ModelState);
+                if(!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var user = new User() { UserName = model.Email , Email = model.Email};
+                //Wall wall = new Wall();
+                //var context = new FaceBookDb();
+                //context.Walls.Add(wall);
+                //context.SaveChanges();
+                ////user.Wall = wall;
+
+                IdentityResult result = await UserManager.CreateAsync(user , model.Password);
+
+                if(!result.Succeeded)
+                {
+                    return GetErrorResult(result);
+                }
+
+                return Ok();
+
             }
-
-            var user = new User() { UserName = model.Email, Email = model.Email };
-            Wall wall = new Wall();
-            user.Wall = wall;
-
-            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
+            catch(System.Data.Entity.Validation.DbEntityValidationException ex)
             {
-                return GetErrorResult(result);
+                foreach(var validationErrors in ex.EntityValidationErrors)
+                {
+                    foreach(var validationError in validationErrors.ValidationErrors)
+                    {
+                        outcome = String.Format("Property: {0} throws Error: {1}" , validationError.PropertyName , validationError.ErrorMessage);
+                    }
+                }
             }
-
-            return Ok();
+            return Content(HttpStatusCode.BadRequest , outcome);
         }
 
         // POST api/Account/RegisterExternal
@@ -349,36 +371,36 @@ namespace FaceBook.Services.Controllers
         [Route("RegisterExternal")]
         public async Task<IHttpActionResult> RegisterExternal(RegisterExternalBindingModel model)
         {
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
             var info = await Authentication.GetExternalLoginInfoAsync();
-            if (info == null)
+            if(info == null)
             {
                 return InternalServerError();
             }
 
-            var user = new User() { UserName = model.Email, Email = model.Email };
+            var user = new User() { UserName = model.Email , Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user);
-            if (!result.Succeeded)
+            if(!result.Succeeded)
             {
                 return GetErrorResult(result);
             }
 
-            result = await UserManager.AddLoginAsync(user.Id, info.Login);
-            if (!result.Succeeded)
+            result = await UserManager.AddLoginAsync(user.Id , info.Login);
+            if(!result.Succeeded)
             {
-                return GetErrorResult(result); 
+                return GetErrorResult(result);
             }
             return Ok();
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && _userManager != null)
+            if(disposing && _userManager != null)
             {
                 _userManager.Dispose();
                 _userManager = null;
@@ -396,22 +418,22 @@ namespace FaceBook.Services.Controllers
 
         private IHttpActionResult GetErrorResult(IdentityResult result)
         {
-            if (result == null)
+            if(result == null)
             {
                 return InternalServerError();
             }
 
-            if (!result.Succeeded)
+            if(!result.Succeeded)
             {
-                if (result.Errors != null)
+                if(result.Errors != null)
                 {
-                    foreach (string error in result.Errors)
+                    foreach(string error in result.Errors)
                     {
-                        ModelState.AddModelError("", error);
+                        ModelState.AddModelError("" , error);
                     }
                 }
 
-                if (ModelState.IsValid)
+                if(ModelState.IsValid)
                 {
                     // No ModelState errors are available to send, so just return an empty BadRequest.
                     return BadRequest();
@@ -432,11 +454,11 @@ namespace FaceBook.Services.Controllers
             public IList<Claim> GetClaims()
             {
                 IList<Claim> claims = new List<Claim>();
-                claims.Add(new Claim(ClaimTypes.NameIdentifier, ProviderKey, null, LoginProvider));
+                claims.Add(new Claim(ClaimTypes.NameIdentifier , ProviderKey , null , LoginProvider));
 
-                if (UserName != null)
+                if(UserName != null)
                 {
-                    claims.Add(new Claim(ClaimTypes.Name, UserName, null, LoginProvider));
+                    claims.Add(new Claim(ClaimTypes.Name , UserName , null , LoginProvider));
                 }
 
                 return claims;
@@ -444,28 +466,28 @@ namespace FaceBook.Services.Controllers
 
             public static ExternalLoginData FromIdentity(ClaimsIdentity identity)
             {
-                if (identity == null)
+                if(identity == null)
                 {
                     return null;
                 }
 
                 Claim providerKeyClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
 
-                if (providerKeyClaim == null || String.IsNullOrEmpty(providerKeyClaim.Issuer)
+                if(providerKeyClaim == null || String.IsNullOrEmpty(providerKeyClaim.Issuer)
                     || String.IsNullOrEmpty(providerKeyClaim.Value))
                 {
                     return null;
                 }
 
-                if (providerKeyClaim.Issuer == ClaimsIdentity.DefaultIssuer)
+                if(providerKeyClaim.Issuer == ClaimsIdentity.DefaultIssuer)
                 {
                     return null;
                 }
 
                 return new ExternalLoginData
                 {
-                    LoginProvider = providerKeyClaim.Issuer,
-                    ProviderKey = providerKeyClaim.Value,
+                    LoginProvider = providerKeyClaim.Issuer ,
+                    ProviderKey = providerKeyClaim.Value ,
                     UserName = identity.FindFirstValue(ClaimTypes.Name)
                 };
             }
@@ -479,9 +501,9 @@ namespace FaceBook.Services.Controllers
             {
                 const int bitsPerByte = 8;
 
-                if (strengthInBits % bitsPerByte != 0)
+                if(strengthInBits % bitsPerByte != 0)
                 {
-                    throw new ArgumentException("strengthInBits must be evenly divisible by 8.", "strengthInBits");
+                    throw new ArgumentException("strengthInBits must be evenly divisible by 8." , "strengthInBits");
                 }
 
                 int strengthInBytes = strengthInBits / bitsPerByte;

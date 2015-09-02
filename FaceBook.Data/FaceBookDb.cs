@@ -31,9 +31,22 @@ namespace FaceBook.Data
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             modelBuilder.Entity<User>()
-                .HasRequired(u => u.Wall)
-                .WithOptional(w => w.User)
-                .WillCascadeOnDelete(false);
+                .HasRequired(a => a.Wall);
+                //.WithOptional(w => w.User);
+                //.WithMany()
+                //.WithOptional(w => w.User);
+            //.HasForeignKey(u => u.);
+
+            //modelBuilder.Entity<Wall>()
+            //    .HasRequired(u => u.User)
+            //    //.WithOptional(w => w.Wall);
+            //    .WithMany()
+            //    .HasForeignKey(u => u.AspNetUserId);
+
+            //modelBuilder.Entity<User>()
+            //    .HasRequired(u => u.Wall)
+            //    .WithOptional(w => w.User)
+            //    .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }

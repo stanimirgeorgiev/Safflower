@@ -15,6 +15,8 @@ namespace FaceBook.Data.Migrations
 
         protected override void Seed(FaceBookDb context)
         {
+            context.Database.ExecuteSqlCommand("ALTER TABLE AspNetUsers ADD CONSTRAINT uc_Wall UNIQUE(Id)");
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

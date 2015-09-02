@@ -15,11 +15,17 @@ namespace FaceBook.Models
         {
             this.posts = new HashSet<Post>();
         }
+
+        public Wall(string Id)
+        {
+            this.Id = Id;
+        }
         [Key]
-        [Required]
-        public int Id { get; set; }
-        [Required]
-        public string UserId { get; set; }
+       // [Required]
+        public string Id { get; set; }
+
+        //public string AspNetUserId { get; set; }
+        [ForeignKey("Id")]
         public virtual User User { get; set; }
 
         public virtual ICollection<Post> Posts

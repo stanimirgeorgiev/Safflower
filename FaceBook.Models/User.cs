@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -14,27 +15,31 @@ namespace FaceBook.Models
     public  class User: IdentityUser
     {
         private ICollection<Chat> chats;
-        private ICollection<Post> posts;
+        private ICollection<ChatRoom> chatRooms;
         private ICollection<Comment> comments;
-        private ICollection<PostLike> postLikes;
         private ICollection<CommentLike> commentLikes;
-        private ICollection<Group> groups;
         private ICollection<User> friends;
+        private ICollection<Group> groups;
+        private ICollection<PostLike> postLikes;
+        private ICollection<Post> posts;
 
         public User()
         {
+            this.chatRooms = new HashSet<ChatRoom>();
             this.chats= new HashSet<Chat>();
-            this.posts = new HashSet<Post>();
-            this.comments = new HashSet<Comment>();
-            this.postLikes = new List<PostLike>();
             this.commentLikes = new HashSet<CommentLike>();
-            this.groups = new HashSet<Group>();
+            this.comments = new HashSet<Comment>();
             this.friends = new HashSet<User>();
+            this.groups = new HashSet<Group>();
+            this.postLikes = new List<PostLike>();
+            this.posts = new HashSet<Post>();
+            this.Wall = new Wall(this.Id);
         }
 
-      
 
-        public int WallId { get; set; }
+
+        //public int WallId { get; set; }
+        //[ForeignKey("WallId")]
         public virtual Wall Wall { get; set; }
 
         public virtual ICollection<Post> Posts
@@ -79,7 +84,11 @@ namespace FaceBook.Models
             set { this.chats = value; }
         }
 
-
+        public virtual ICollection<ChatRoom> ChatRooms
+        {
+            get { return this.chatRooms; }
+            set { this.chatRooms = value; }
+        }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(
             UserManager<User> manager,
             string authenticationType)

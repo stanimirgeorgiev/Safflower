@@ -29,21 +29,18 @@ namespace FaceBook.Models
         public string UserId { get; set; }
         public virtual User User { get; set; }
 
-        [DefaultValue(1)]
         public byte FriendsView
         {
             get;
             set;
         }
 
-        [DefaultValue(0)]
         public byte LoggedUsersView
         {
             get;
             set;
         }
 
-        [DefaultValue(0)]
         public byte GuestView
         {
             get;
