@@ -25,10 +25,10 @@ namespace FaceBook.Models
         public string Id { get; set; }
 
         //public string AspNetUserId { get; set; }
-        [ForeignKey("Id")]
+        //[ForeignKey("Id")]
         public virtual User User { get; set; }
 
-        [ForeignKey("IdString")]
+        //[ForeignKey("IdString")]
         public virtual Group Group { get; set; }
 
         public virtual ICollection<Post> Posts
