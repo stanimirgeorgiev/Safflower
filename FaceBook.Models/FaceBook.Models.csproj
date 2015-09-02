@@ -61,7 +61,6 @@
     <Compile Include="ChatRoom.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="CommentLike.cs" />
-    <Compile Include="Friendsss.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Like.cs" />
     <Compile Include="Post.cs" />

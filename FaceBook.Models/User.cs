@@ -19,7 +19,7 @@ namespace FaceBook.Models
         private ICollection<ChatRoom> chatRooms;
         private ICollection<Comment> comments;
         private ICollection<CommentLike> commentLikes;
-        private ICollection<Friendsss> friends;
+        private ICollection<User> friends;
         private ICollection<Group> groups;
         private ICollection<PostLike> postLikes;
         private ICollection<Post> posts;
@@ -30,7 +30,7 @@ namespace FaceBook.Models
             this.chats= new HashSet<Chat>();
             this.commentLikes = new HashSet<CommentLike>();
             this.comments = new HashSet<Comment>();
-            this.friends = new HashSet<Friendsss>();
+            this.friends = new HashSet<User>();
             this.groups = new HashSet<Group>();
             this.postLikes = new List<PostLike>();
             this.posts = new HashSet<Post>();
@@ -74,7 +74,7 @@ namespace FaceBook.Models
         }
 
 
-        public virtual ICollection<Friendsss> Friends
+        public virtual ICollection<User> Friends
         {
             get { return this.friends; }
             set { this.friends = value; }
