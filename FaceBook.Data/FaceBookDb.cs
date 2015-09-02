@@ -32,6 +32,16 @@ namespace FaceBook.Data
 
             modelBuilder.Entity<User>()
                 .HasRequired(a => a.Wall);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Friends)
+                .WithMany()
+                .Map(m =>
+                {
+                    m.MapLeftKey("LeftFriendId");
+                    m.MapRightKey("RightFriendId");
+                    m.ToTable("Friends");
+                });
                 //.WithOptional(w => w.User);
                 //.WithMany()
                 //.WithOptional(w => w.User);
