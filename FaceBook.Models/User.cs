@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -18,7 +19,7 @@ namespace FaceBook.Models
         private ICollection<ChatRoom> chatRooms;
         private ICollection<Comment> comments;
         private ICollection<CommentLike> commentLikes;
-        private ICollection<User> friends;
+        private ICollection<Friendsss> friends;
         private ICollection<Group> groups;
         private ICollection<PostLike> postLikes;
         private ICollection<Post> posts;
@@ -29,7 +30,7 @@ namespace FaceBook.Models
             this.chats= new HashSet<Chat>();
             this.commentLikes = new HashSet<CommentLike>();
             this.comments = new HashSet<Comment>();
-            this.friends = new HashSet<User>();
+            this.friends = new HashSet<Friendsss>();
             this.groups = new HashSet<Group>();
             this.postLikes = new List<PostLike>();
             this.posts = new HashSet<Post>();
@@ -72,7 +73,8 @@ namespace FaceBook.Models
             set { this.groups = value; }
         }
 
-        public virtual ICollection<User> Friends
+
+        public virtual ICollection<Friendsss> Friends
         {
             get { return this.friends; }
             set { this.friends = value; }

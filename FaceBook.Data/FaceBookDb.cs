@@ -30,8 +30,15 @@ namespace FaceBook.Data
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
+            modelBuilder.Entity<Group>()
+                .HasRequired(a => a.Wall);
+
             modelBuilder.Entity<User>()
                 .HasRequired(a => a.Wall);
+
+            //modelBuilder.Entity<User>()
+            //    .HasOptional(c => c.Friends)
+            //    .WithMany();
                 //.WithOptional(w => w.User);
                 //.WithMany()
                 //.WithOptional(w => w.User);

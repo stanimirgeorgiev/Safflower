@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -13,10 +14,13 @@ namespace FaceBook.Models
         public Group()
         {
             this.users = new HashSet<User>();
+            this.Wall = new Wall("Problemniq" + DateTime.Now.ToString());
         }
+        //[Key]
+        //[Required]
+        //public string Id { get; set; }
         [Key]
-        [Required]
-        public int Id { get; set; }
+        public string IdString { get; set; }
 
         public string Name { get; set; }
 
@@ -25,8 +29,8 @@ namespace FaceBook.Models
             get { return this.users; }
             set { this.users = value; }
         }
-        [Required]
-        public int  WallId { get; set; }
+        //public string  WallId { get; set; }
+        //[ForeignKey("WallId")]
         public virtual Wall Wall { get; set; }
 
     }

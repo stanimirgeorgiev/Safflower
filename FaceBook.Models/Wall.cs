@@ -16,9 +16,9 @@ namespace FaceBook.Models
             this.posts = new HashSet<Post>();
         }
 
-        public Wall(string Id)
+        public Wall(string problem)
         {
-            this.Id = Id;
+            this.Id = problem;
         }
         [Key]
        // [Required]
@@ -27,6 +27,9 @@ namespace FaceBook.Models
         //public string AspNetUserId { get; set; }
         [ForeignKey("Id")]
         public virtual User User { get; set; }
+
+        [ForeignKey("IdString")]
+        public virtual Group Group { get; set; }
 
         public virtual ICollection<Post> Posts
         {

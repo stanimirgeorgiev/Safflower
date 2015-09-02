@@ -15,7 +15,9 @@ namespace FaceBook.Data.Migrations
 
         protected override void Seed(FaceBookDb context)
         {
-            context.Database.ExecuteSqlCommand("ALTER TABLE AspNetUsers ADD CONSTRAINT uc_Wall UNIQUE(Id)");
+            context.Database.ExecuteSqlCommand("ALTER TABLE AspNetUsers ADD CONSTRAINT uc_WallUser UNIQUE(Id)");
+            context.Database.ExecuteSqlCommand("CREATE UNIQUE INDEX IX_Group_UniqueIdString ON Groups (IdString)");
+            context.Database.ExecuteSqlCommand("ALTER TABLE Groups ADD CONSTRAINT uc_WallGroup UNIQUE(IdString)");
 
             //  This method will be called after migrating to the latest version.
 

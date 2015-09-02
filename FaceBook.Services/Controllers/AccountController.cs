@@ -336,10 +336,10 @@ namespace FaceBook.Services.Controllers
                 }
 
                 var user = new User() { UserName = model.Email , Email = model.Email};
-                //Wall wall = new Wall();
-                //var context = new FaceBookDb();
-                //context.Walls.Add(wall);
-                //context.SaveChanges();
+                Group group = new Group();
+                var context = new FaceBookDb();
+                context.Groups.Add(group);
+                context.SaveChanges();
                 ////user.Wall = wall;
 
                 IdentityResult result = await UserManager.CreateAsync(user , model.Password);
