@@ -68,6 +68,8 @@
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wall.cs" />
+    <Compile Include="WallGroup.cs" />
+    <Compile Include="WallUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

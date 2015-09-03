@@ -11,7 +11,7 @@ namespace FaceBook.Models
 
 
         private ICollection<Comment> comments;
-        private ICollection<Wall> walls;
+        
         
         [Key]
         [Required]
@@ -20,22 +20,20 @@ namespace FaceBook.Models
         public string UserId { get; set; }
         public virtual User User { get; set; }
 
+        public string WallUserId { get; set; }
+        public virtual WallUser WallUser { get; set; }
+        public Guid WallGroupId { get; set; }
+        public virtual WallGroup WallGroup { get; set; }
+
         public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
         }
 
-        public virtual ICollection<Wall> Walls
-        {
-            get { return this.walls; }
-            set { this.walls = value; }
-        }
-
         public Post()
         {
             this.comments = new HashSet<Comment>();
-            this.walls = new HashSet<Wall>();
         }
     }
 }

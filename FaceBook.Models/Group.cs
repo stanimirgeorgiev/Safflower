@@ -14,13 +14,13 @@ namespace FaceBook.Models
         public Group()
         {
             this.users = new HashSet<User>();
-            this.Wall = new Wall("Problemniq" + DateTime.Now.ToString());
+            this.Id = Guid.NewGuid();
         }
         //[Key]
         //[Required]
         //public string Id { get; set; }
         [Key]
-        public string IdString { get; set; }
+        public Guid Id { get; set; }
 
         public string Name { get; set; }
 
@@ -31,7 +31,7 @@ namespace FaceBook.Models
         }
         //public string  WallId { get; set; }
         //[ForeignKey("WallId")]
-        public virtual Wall Wall { get; set; }
+        public virtual WallGroup WallGroup { get; set; }
 
     }
 }

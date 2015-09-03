@@ -34,14 +34,14 @@ namespace FaceBook.Models
             this.groups = new HashSet<Group>();
             this.postLikes = new List<PostLike>();
             this.posts = new HashSet<Post>();
-            this.Wall = new Wall(this.Id);
+            //this.WallUser = new WallUser();
         }
 
 
 
         //public int WallId { get; set; }
         //[ForeignKey("WallId")]
-        public virtual Wall Wall { get; set; }
+        public virtual WallUser WallUser { get; set; }
 
         public virtual ICollection<Post> Posts
         {

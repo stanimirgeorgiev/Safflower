@@ -16,7 +16,8 @@ namespace FaceBook.Data
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<FaceBookDb, Configuration>());
         }
-        public DbSet<Wall> Walls { get; set; }
+        public DbSet<WallUser> WallsUsers { get; set; }
+        public DbSet<WallGroup> WallsGroups { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<PostLike> PostLikes { get; set; }
@@ -31,10 +32,10 @@ namespace FaceBook.Data
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             modelBuilder.Entity<Group>()
-                .HasRequired(a => a.Wall);
+                .HasRequired(a => a.WallGroup);
 
             modelBuilder.Entity<User>()
-                .HasRequired(a => a.Wall);
+                .HasRequired(a => a.WallUser);
 
 
             modelBuilder.Entity<User>()
