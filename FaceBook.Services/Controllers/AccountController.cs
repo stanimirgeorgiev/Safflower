@@ -326,21 +326,13 @@ namespace FaceBook.Services.Controllers
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
         {
-            string outcome = "Proooobaaaa";
-            
-            try
-            {
-                if(!ModelState.IsValid)
+             if(!ModelState.IsValid)
                 {
                     return BadRequest(ModelState);
                 }
 
-                var user = new User() { UserName = model.Email , Email = model.Email};
-                Group group = new Group();
-                var context = new FaceBookDb();
-                context.Groups.Add(group);
-                context.SaveChanges();
-                ////user.Wall = wall;
+                WallUser wallUser = new WallUser();
+                var user = new User() { UserName = model.Username, Email = model.Email, WallUser = wallUser };
 
                 IdentityResult result = await UserManager.CreateAsync(user , model.Password);
 
@@ -351,18 +343,8 @@ namespace FaceBook.Services.Controllers
 
                 return Ok();
 
-            }
-            catch(System.Data.Entity.Validation.DbEntityValidationException ex)
-            {
-                foreach(var validationErrors in ex.EntityValidationErrors)
-                {
-                    foreach(var validationError in validationErrors.ValidationErrors)
-                    {
-                        outcome = String.Format("Property: {0} throws Error: {1}" , validationError.PropertyName , validationError.ErrorMessage);
-                    }
-                }
-            }
-            return Content(HttpStatusCode.BadRequest , outcome);
+            
+            
         }
 
         // POST api/Account/RegisterExternal

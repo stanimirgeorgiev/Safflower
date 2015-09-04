@@ -35,6 +35,10 @@ namespace FaceBook.Services.Models
     public class RegisterBindingModel
     {
         [Required]
+        [MinLength(6)]
+        public string Username { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
