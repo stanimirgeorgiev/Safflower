@@ -49,6 +49,30 @@ namespace FaceBook.Services.Controllers
             }
             
         }
+
+        //POST api/groups/adduser
+        [HttpPost]
+        public IHttpActionResult AddUser([FromBody] GroupAddUserBindingModels model)
+        {
+            if (model == null)
+            {
+                return this.BadRequest("Model cannot be null (no data in request)");
+            }
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+            else
+            {
+                Group group = this.Data.Groups.Find(model.IdGroup);
+                User user = this.Data.Users.Find(model.IdUser);
+                group.Users.Add(user);
+                this.Data.SaveChanges();
+                string result = string.Format("User {0} successfully join group {1}!", user.UserName, group.Name);
+                return Ok(result);
+            }
+        }
     }
 
 }
