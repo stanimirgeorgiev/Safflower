@@ -1,7 +1,8 @@
-﻿namespace FaceBook.Models
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
+namespace FaceBook.Models
+{
     public abstract class Wall
     {
         private ICollection<Post> posts;
