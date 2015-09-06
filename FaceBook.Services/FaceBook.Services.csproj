@@ -20,10 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-<<<<<<< HEAD
-=======
     <UseGlobalApplicationHostFile />
->>>>>>> 41320784222de6edbd5f084514fddf9d8b73eb03
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -203,12 +200,6 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
-<<<<<<< HEAD
-    <Compile Include="Controllers\GroupsController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
-=======
     <Compile Include="Controllers\CommentLikesController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -217,20 +208,11 @@
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WallsController.cs" />
->>>>>>> 41320784222de6edbd5f084514fddf9d8b73eb03
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-<<<<<<< HEAD
-    <Compile Include="Models\BindingModels\GroupAddUserBindingModels.cs" />
-    <Compile Include="Models\BindingModels\GroupCreateBindingModels.cs" />
-    <Compile Include="Models\BindingModels\GroupUpdateBindingModels.cs" />
-    <Compile Include="Models\BindingModels\UserSearchBindingModel.cs" />
-    <Compile Include="Models\DataModels\GroupsGetViewModels.cs" />
-    <Compile Include="Models\DataModels\UserSearchViewModels.cs" />
-=======
     <Compile Include="Models\BindingModels\AddCommentBindingModel.cs" />
     <Compile Include="Models\BindingModels\AddPostGroupWallBindingModel.cs" />
     <Compile Include="Models\BindingModels\AddPostUserWallBindingModel.cs" />
@@ -242,7 +224,6 @@
     <Compile Include="Models\DataModels\UserDataModel.cs" />
     <Compile Include="Models\DataModels\UserSearchViewModels.cs" />
     <Compile Include="Models\DataModels\UserWallDataModel.cs" />
->>>>>>> 41320784222de6edbd5f084514fddf9d8b73eb03
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
