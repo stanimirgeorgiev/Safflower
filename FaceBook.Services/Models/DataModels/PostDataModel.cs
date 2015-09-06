@@ -7,7 +7,7 @@ using Microsoft.Ajax.Utilities;
 
 namespace FaceBook.Services.Models.DataModels
 {
-    public class AddPostDataModel
+    public class PostDataModel
     {
         public int Id { get; set; }
 
@@ -23,11 +23,11 @@ namespace FaceBook.Services.Models.DataModels
 
         public IEnumerable<CommentDataModel> Comments { get; set; }
 
-        public static Expression<Func<Post, AddPostDataModel>> Create
+        public static Expression<Func<Post, PostDataModel>> Create
         {
             get
             {
-                return p => new AddPostDataModel()
+                return p => new PostDataModel()
                 {
                     Id = p.Id,
                     Content = p.Content,

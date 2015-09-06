@@ -2,13 +2,10 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class AddPostBindingModel
+    public class EditPostBindingModel
     {
         [Required]
         [MinLength(2)]
         public string Content { get; set; }
-
-        [Required]
-        public string WallId { get; set; }
     }
 }

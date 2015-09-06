@@ -209,9 +209,11 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\BindingModels\AddPostBindingModel.cs" />
+    <Compile Include="Models\BindingModels\AddPostGroupWallBindingModel.cs" />
+    <Compile Include="Models\BindingModels\AddPostUserWallBindingModel.cs" />
+    <Compile Include="Models\BindingModels\EditPostBindingModel.cs" />
     <Compile Include="Models\BindingModels\UserSearchBindingModel.cs" />
-    <Compile Include="Models\DataModels\AddPostDataModel.cs" />
+    <Compile Include="Models\DataModels\PostDataModel.cs" />
     <Compile Include="Models\DataModels\CommentDataModel.cs" />
     <Compile Include="Models\DataModels\UserDataModel.cs" />
     <Compile Include="Models\DataModels\UserSearchViewModels.cs" />
