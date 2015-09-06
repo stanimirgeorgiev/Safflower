@@ -6,9 +6,11 @@ using System.Web;
 
 namespace FaceBook.Services.Models.BindingModels
 {
-    public class GroupCreateBindingModels
+    public class GroupUpdateBindingModels
     {
         [Required]
-        public string Name { get; set; }
+        public Guid Id { get; set; }
+        [Required]
+        public string NewName { get; set; }
     }
 }
