@@ -20,9 +20,9 @@
 
             var loggedUserId = this.User.Identity.GetUserId();
 
-            var isAlreadyLikes = post.Likes
+            var isAlreadyLiked = post.Likes
                 .Any(pl => pl.UserId == loggedUserId);
-            if (isAlreadyLikes)
+            if (isAlreadyLiked)
             {
                 var like = post.Likes
                     .FirstOrDefault(pl => pl.UserId == loggedUserId);
