@@ -7,5 +7,7 @@ namespace FaceBook.Services.Models.BindingModels
 {
     public class GroupAddUserBindingModels
     {
+        public Guid IdGroup { get; set; }
+        public string IdUser { get; set; }
     }
 }
