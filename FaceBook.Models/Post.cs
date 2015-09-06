@@ -21,6 +21,8 @@
 
         public string Content { get; set; }
 
+        public bool IsLikedByCurrentUser { get; set; }
+
         public DateTime PostedOn { get; set; }
 
         [Required]

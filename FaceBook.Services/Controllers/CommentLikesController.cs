@@ -5,6 +5,7 @@
     using FaceBook.Models;
     using Microsoft.AspNet.Identity;
 
+    [Authorize]
     public class CommentLikesController : BaseApiController
     {
         [HttpPost]
