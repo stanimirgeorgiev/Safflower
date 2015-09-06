@@ -8,6 +8,7 @@
     using FaceBook.Services.Models.DataModels;
     using Microsoft.AspNet.Identity;
 
+    [Authorize]
     public class CommentsController : BaseApiController
     {
         [HttpPost]

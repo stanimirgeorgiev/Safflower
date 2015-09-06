@@ -8,6 +8,7 @@
     using FaceBook.Services.Models.DataModels;
     using FaceBook.Models;
 
+    [Authorize]
     public class PostsController : BaseApiController
     {
 
