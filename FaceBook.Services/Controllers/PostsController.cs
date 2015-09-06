@@ -11,7 +11,6 @@
     [Authorize]
     public class PostsController : BaseApiController
     {
-
         [HttpGet]
         [Route("api/posts/{id}")]
         public IHttpActionResult GetPostById(int id)

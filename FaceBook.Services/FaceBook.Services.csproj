@@ -207,8 +207,7 @@
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Controllers\WallGroupsController.cs" />
-    <Compile Include="Controllers\WallUsersController.cs" />
+    <Compile Include="Controllers\WallsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,10 +218,12 @@
     <Compile Include="Models\BindingModels\AddPostUserWallBindingModel.cs" />
     <Compile Include="Models\BindingModels\EditPostBindingModel.cs" />
     <Compile Include="Models\BindingModels\UserSearchBindingModel.cs" />
+    <Compile Include="Models\DataModels\GroupWallDataModel.cs" />
     <Compile Include="Models\DataModels\PostDataModel.cs" />
     <Compile Include="Models\DataModels\CommentDataModel.cs" />
     <Compile Include="Models\DataModels\UserDataModel.cs" />
     <Compile Include="Models\DataModels\UserSearchViewModels.cs" />
+    <Compile Include="Models\DataModels\UserWallDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

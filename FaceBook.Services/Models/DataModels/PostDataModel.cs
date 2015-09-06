@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using FaceBook.Models;
-using Microsoft.Ajax.Utilities;
-
-namespace FaceBook.Services.Models.DataModels
+﻿namespace FaceBook.Services.Models.DataModels
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using FaceBook.Models;
+
     public class PostDataModel
     {
         public int Id { get; set; }
@@ -20,6 +19,8 @@ namespace FaceBook.Services.Models.DataModels
         public DateTime PostedOn { get; set; }
 
         public int LikesCount { get; set; }
+
+        public bool IsLikedByCurrentUser { get; set; }
 
         public IEnumerable<CommentDataModel> Comments { get; set; }
 
@@ -41,6 +42,7 @@ namespace FaceBook.Services.Models.DataModels
                     },
                     PostedOn = p.PostedOn,
                     LikesCount = p.Likes.Count,
+                    IsLikedByCurrentUser = p.IsLikedByCurrentUser,
                     Comments = p.Comments
                         .OrderBy(c => c.PostedOn)
                         .Select(c => new CommentDataModel()
@@ -50,7 +52,10 @@ namespace FaceBook.Services.Models.DataModels
                             Author = new UserDataModel()
                             {
                                 Username = c.User.UserName
-                            }
+                            },
+                            IsLikedByCurrentUser = c.IsLikedByCurrentUser,
+                            PostedOn = c.PostedOn,
+                            LikesCount = c.Likes.Count
                         })
                 };
             }

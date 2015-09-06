@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq.Expressions;
-using FaceBook.Models;
-
-namespace FaceBook.Services.Models.DataModels
+﻿namespace FaceBook.Services.Models.DataModels
 {
+    using System;
+    using System.Linq.Expressions;
+    using FaceBook.Models;
+
     public class CommentDataModel
     {
         public int Id { get; set; }
@@ -15,6 +15,8 @@ namespace FaceBook.Services.Models.DataModels
         public DateTime PostedOn { get; set; }
 
         public int LikesCount { get; set; }
+
+        public bool IsLikedByCurrentUser { get; set; }
 
         public static Expression<Func<Comment, CommentDataModel>> Create
         {
@@ -29,7 +31,8 @@ namespace FaceBook.Services.Models.DataModels
                         Username = c.User.UserName
                     },
                     PostedOn = DateTime.Now,
-                    LikesCount = c.Likes.Count
+                    LikesCount = c.Likes.Count,
+                    IsLikedByCurrentUser = c.IsLikedByCurrentUser
                 };
             }
         } 
