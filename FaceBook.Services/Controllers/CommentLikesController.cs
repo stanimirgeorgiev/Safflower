@@ -23,10 +23,11 @@
                 .Any(cl => cl.UserId == loggedUserId);
             if (isAlreadyLikes)
             {
-                var commentLike = comment.Likes
+                var commentLike = comment
+                    .Likes
                     .FirstOrDefault(cl => cl.UserId == loggedUserId);
 
-                comment.Likes.Remove(commentLike);
+                this.Data.CommentLikes.Remove(commentLike);
                 this.Data.SaveChanges();
 
                 return this.Ok();

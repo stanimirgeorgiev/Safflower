@@ -24,10 +24,10 @@
                 .Any(pl => pl.UserId == loggedUserId);
             if (isAlreadyLiked)
             {
-                var like = post.Likes
+                var postLike = post.Likes
                     .FirstOrDefault(pl => pl.UserId == loggedUserId);
 
-                post.Likes.Remove(like);
+                this.Data.PostLikes.Remove(postLike);
                 this.Data.SaveChanges();
 
                 return this.Ok();
