@@ -1,4 +1,6 @@
-﻿namespace FaceBook.Services.Controllers
+﻿using Microsoft.AspNet.Identity;
+
+namespace FaceBook.Services.Controllers
 {
     using System;
     using System.Linq;
@@ -42,6 +44,24 @@
                 .FirstOrDefault();
 
             return this.Ok(data);
+        }
+
+        [HttpGet]
+        [Route("api/users/GetNewsFeed")]
+        public IHttpActionResult GetNewsFeed()
+        {
+            var loggedUserId = this.User.Identity.GetUserId();
+            var loggedUser = this.Data.Users.Find(loggedUserId);
+
+            var friends = loggedUser.Friends.AsQueryable();
+
+            var result = friends
+               .SelectMany(p => p.Posts)
+               .OrderByDescending(p => p.PostedOn)
+               .Select(PostDataModel.Create);
+
+
+            return this.Ok(result);
         }
     }
 }

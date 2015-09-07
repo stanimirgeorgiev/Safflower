@@ -38,7 +38,7 @@
                             PostedOn = p.PostedOn,
                             WallOwner = new UserDataModel()
                             {
-                                Username = p.User.UserName
+                                Username = p.WallUser.User.UserName
                             },
                             LikesCount = p.Likes.Count,
                             IsLikedByCurrentUser = p.IsLikedByCurrentUser,

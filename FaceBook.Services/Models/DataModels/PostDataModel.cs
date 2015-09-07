@@ -38,13 +38,13 @@
                     },
                     WallOwner = new UserDataModel()
                     {
-                      Username = p.User.UserName
+                      Username = p.WallUser.User.UserName
                     },
                     PostedOn = p.PostedOn,
                     LikesCount = p.Likes.Count,
                     IsLikedByCurrentUser = p.IsLikedByCurrentUser,
                     Comments = p.Comments
-                        .OrderBy(c => c.PostedOn)
+                        .OrderByDescending(c => c.PostedOn)
                         .Select(c => new CommentDataModel()
                         {
                             Id = c.Id,
