@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
 using FaceBook.Models;
 using FaceBook.Services.Models.BindingModels;
@@ -16,14 +17,21 @@ namespace FaceBook.Services.Controllers
     {
         //GET api/groups
         [HttpGet]
+        [Route("api/groups")]
         public IHttpActionResult Get()
         {
-            var groups = this.Data.Groups.Select(GroupsGetViewModels.Create);
-            return Ok(groups);
+            var groups = this.Data.Groups.ToList();
+            List<GroupsGetViewModels> result = new List<GroupsGetViewModels>();
+            foreach (var group in groups)
+            {
+                result.Add(new GroupsGetViewModels(group));
+            }
+            return Ok(result);
         }
 
         //POST api/groups/create
         [HttpPost]
+        [Route("api/groups/create")]
         public IHttpActionResult CreateGroup([FromBody] GroupCreateBindingModels model)
         {
             if (model == null)
@@ -41,17 +49,15 @@ namespace FaceBook.Services.Controllers
                 group.Name = model.Name;
                 this.Data.Groups.Add(group);
                 this.Data.SaveChanges();
-                return Ok(new
-                {
-                    group.Name, 
-                    group.Id
-                });
+
+                return Ok(new GroupsGetViewModels(group));
             }
-            
+
         }
 
         //POST api/groups/adduser
         [HttpPost]
+        [Route("api/groups/adduser")]
         public IHttpActionResult AddUser([FromBody] GroupAddUserBindingModels model)
         {
             if (model == null)
@@ -65,13 +71,68 @@ namespace FaceBook.Services.Controllers
             }
             else
             {
-                Group group = this.Data.Groups.Find(model.IdGroup);
-                User user = this.Data.Users.Find(model.IdUser);
+                Group group = this.Data.Groups.Find(model.GroupId);
+                User user = this.Data.Users.Find(model.UserId);
                 group.Users.Add(user);
                 this.Data.SaveChanges();
                 string result = string.Format("User {0} successfully join group {1}!", user.UserName, group.Name);
                 return Ok(result);
             }
+        }
+
+        //PATCH api/groups/update
+        [HttpPatch]
+        [Route("api/groups/update")]
+        public IHttpActionResult UpdateGroup([FromBody] GroupUpdateBindingModels model)
+        {
+            if (model == null)
+            {
+                return this.BadRequest("Model cannot be null (no data in request)");
+            }
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+            else
+            {
+                Group group = this.Data.Groups.Find(model.Id);
+                group.Name = model.NewName;
+                this.Data.SaveChanges();
+                return Ok(new GroupsGetViewModels(group));
+            }
+        }
+
+        [HttpPost]
+        [Route("api/groups/remove")]
+        public IHttpActionResult Remove([FromBody] GroupRemoveBindingModels model)
+        {
+            if (model == null)
+            {
+                return this.BadRequest("Model cannot be null (no data in request)");
+            }
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+            else
+            {
+                Group group = this.Data.Groups.Find(model.Id);
+                this.Data.Groups.Remove(group);
+                this.Data.SaveChanges();
+                return Ok(new GroupsGetViewModels(group));
+            }
+        }
+
+        //GET api/groups/search/{i}
+        [HttpGet]
+        [Route("api/groups/search")]
+        public IHttpActionResult SearchGroupById(Guid id)
+        {
+            Group group = this.Data.Groups.Find(id);
+
+            return Ok(new GroupsGetViewModels(group));
         }
     }
 

@@ -202,6 +202,7 @@
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\CommentLikesController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostLikesController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
@@ -217,7 +218,12 @@
     <Compile Include="Models\BindingModels\AddPostGroupWallBindingModel.cs" />
     <Compile Include="Models\BindingModels\AddPostUserWallBindingModel.cs" />
     <Compile Include="Models\BindingModels\EditPostBindingModel.cs" />
+    <Compile Include="Models\BindingModels\GroupAddUserBindingModels.cs" />
+    <Compile Include="Models\BindingModels\GroupCreateBindingModels.cs" />
+    <Compile Include="Models\BindingModels\GroupRemoveBindingModels.cs" />
+    <Compile Include="Models\BindingModels\GroupUpdateBindingModels.cs" />
     <Compile Include="Models\BindingModels\UserSearchBindingModel.cs" />
+    <Compile Include="Models\DataModels\GroupsGetViewModels.cs" />
     <Compile Include="Models\DataModels\GroupWallDataModel.cs" />
     <Compile Include="Models\DataModels\PostDataModel.cs" />
     <Compile Include="Models\DataModels\CommentDataModel.cs" />

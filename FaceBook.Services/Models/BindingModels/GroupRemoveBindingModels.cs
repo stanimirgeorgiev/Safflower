@@ -5,9 +5,8 @@ using System.Web;
 
 namespace FaceBook.Services.Models.BindingModels
 {
-    public class GroupAddUserBindingModels
+    public class GroupRemoveBindingModels
     {
-        public Guid GroupId { get; set; }
-        public string UserId { get; set; }
+        public Guid Id { get; set; }
     }
 }
