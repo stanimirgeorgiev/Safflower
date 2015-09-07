@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceBook.Data", "FaceBook.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceBook.Services", "FaceBook.Services\FaceBook.Services.csproj", "{3FB4E206-1799-407B-A72E-5FEBF104EFDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceBook.WebClient", "FaceBook.WebClient\FaceBook.WebClient.csproj", "{08686A48-68F1-40F4-B9D8-E54744377A7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3FB4E206-1799-407B-A72E-5FEBF104EFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FB4E206-1799-407B-A72E-5FEBF104EFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FB4E206-1799-407B-A72E-5FEBF104EFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08686A48-68F1-40F4-B9D8-E54744377A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08686A48-68F1-40F4-B9D8-E54744377A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08686A48-68F1-40F4-B9D8-E54744377A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08686A48-68F1-40F4-B9D8-E54744377A7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
