@@ -5,7 +5,7 @@ using System.Web;
 
 namespace FaceBook.Services.Models.DataModels
 {
-    public class UserSearchViewModels
+    public class UserSearchDataModel
     {
     }
 }

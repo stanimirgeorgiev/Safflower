@@ -228,7 +228,6 @@
     <Compile Include="Models\DataModels\PostDataModel.cs" />
     <Compile Include="Models\DataModels\CommentDataModel.cs" />
     <Compile Include="Models\DataModels\UserDataModel.cs" />
-    <Compile Include="Models\DataModels\UserSearchViewModels.cs" />
     <Compile Include="Models\DataModels\UserWallDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
