@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace FaceBook.Services.Models
+﻿namespace FaceBook.Services.Models
 {
-    // Models returned by AccountController actions.
+    using System.Collections.Generic;
 
     public class ExternalLoginViewModel
     {

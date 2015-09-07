@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace FaceBook.Models
+﻿namespace FaceBook.Models
 {
-    public class WallUser:Wall
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    public class WallUser : Wall
     {
         [Key, ForeignKey("User")]
         public string Id { get; set; }

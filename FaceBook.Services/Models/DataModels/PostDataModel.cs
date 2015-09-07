@@ -44,7 +44,7 @@
                     LikesCount = p.Likes.Count,
                     IsLikedByCurrentUser = p.IsLikedByCurrentUser,
                     Comments = p.Comments
-                        .OrderByDescending(c => c.PostedOn)
+                        .OrderBy(c => c.PostedOn)
                         .Select(c => new CommentDataModel()
                         {
                             Id = c.Id,

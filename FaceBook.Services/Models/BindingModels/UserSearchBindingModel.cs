@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace FaceBook.Services.Models.BindingModels
+﻿namespace FaceBook.Services.Models.BindingModels
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class UserSearchBindingModel
     {
         [Required]

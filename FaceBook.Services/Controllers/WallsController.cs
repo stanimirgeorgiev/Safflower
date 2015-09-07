@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNet.Identity;
-
-namespace FaceBook.Services.Controllers
+﻿namespace FaceBook.Services.Controllers
 {
     using System;
     using System.Linq;
     using FaceBook.Services.Models.DataModels;
+    using Microsoft.AspNet.Identity;
     using System.Web.Http;
 
     [Authorize]

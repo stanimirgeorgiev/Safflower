@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Web;
-using FaceBook.Models;
-
-namespace FaceBook.Services.Models.DataModels
+﻿namespace FaceBook.Services.Models.DataModels
 {
+    using System;
+    using FaceBook.Models;
+
     public class GroupsGetViewModels
     {
         public string Name { get; set; }

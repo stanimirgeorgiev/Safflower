@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Security.Permissions;
-
-namespace FaceBook.Models
+﻿namespace FaceBook.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+
     public class Chat
     {
         [Key]

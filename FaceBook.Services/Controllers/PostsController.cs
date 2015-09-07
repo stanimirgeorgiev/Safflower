@@ -12,11 +12,11 @@
     public class PostsController : BaseApiController
     {
         [HttpGet]
-        [Route("api/posts/{id}")]
-        public IHttpActionResult GetPostById(int id)
+        [Route("api/posts/{postId}")]
+        public IHttpActionResult GetPostById(int postId)
         {
             var post = this.Data.Posts
-                .Where(p => p.Id == id)
+                .Where(p => p.Id == postId)
                 .Select(PostDataModel.Create)
                 .FirstOrDefault();
 
@@ -99,10 +99,10 @@
         }
 
         [HttpPut]
-        [Route("api/posts/{id}")]
-        public IHttpActionResult EditPost(int id, EditPostBindingModel model)
+        [Route("api/posts/{postId}")]
+        public IHttpActionResult EditPost(int postId, EditPostBindingModel model)
         {
-            var post = this.Data.Posts.Find(id);
+            var post = this.Data.Posts.Find(postId);
             if (post == null)
             {
                 return this.NotFound();
@@ -136,10 +136,10 @@
         }
 
         [HttpDelete]
-        [Route("api/posts/{id}")]
-        public IHttpActionResult DeletePostById(int id)
+        [Route("api/posts/{postId}")]
+        public IHttpActionResult DeletePostById(int postId)
         {
-            var post = this.Data.Posts.Find(id);
+            var post = this.Data.Posts.Find(postId);
             if (post == null)
             {
                 return this.NotFound();

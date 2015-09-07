@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Web.Http;
-using FaceBook.Models;
-using FaceBook.Services.Models.BindingModels;
-using FaceBook.Services.Models.DataModels;
-using Microsoft.Ajax.Utilities;
-
-namespace FaceBook.Services.Controllers
+﻿namespace FaceBook.Services.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Http;
+    using FaceBook.Models;
+    using FaceBook.Services.Models.BindingModels;
+    using FaceBook.Services.Models.DataModels;
+
     [Authorize]
     public class GroupsController : BaseApiController
     {

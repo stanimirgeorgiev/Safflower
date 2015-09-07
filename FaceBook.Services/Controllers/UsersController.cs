@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using FaceBook.Services.Models;
-using FaceBook.Services.Models.BindingModels;
-using FaceBook.Services.Models.DataModels;
-using Microsoft.AspNet.Identity;
-
-namespace FaceBook.Services.Controllers
+﻿namespace FaceBook.Services.Controllers
 {
+    using System.Linq;
+    using System.Web.Http;
+    using FaceBook.Services.Models.BindingModels;
+    using FaceBook.Services.Models.DataModels;
+    using Microsoft.AspNet.Identity;
+
     [Authorize]
     public class UsersController : BaseApiController
     {
-        // api/
-
-
         [HttpGet]
         [Route("api/users/search")]
         public IHttpActionResult SearchUser(
@@ -38,7 +30,6 @@ namespace FaceBook.Services.Controllers
                 .Select(u => new UserDataModel
                 {
                     Username = u.UserName
-
                 });
 
             return this.Ok(result);
@@ -48,7 +39,6 @@ namespace FaceBook.Services.Controllers
         [Route("api/users/addfriend/{userId}")]
         public IHttpActionResult AddFriend(string userId)
         {
-
             var friendToBeAdded = this.Data.Users
                 .FirstOrDefault(u => u.Id == userId);
 
@@ -82,7 +72,6 @@ namespace FaceBook.Services.Controllers
         [Route("api/users/removefriend/{userId}")]
         public IHttpActionResult RemoveFriend(string userId)
         {
-
             var friendToBeRemoved = this.Data.Users
                 .FirstOrDefault(u => u.Id == userId);
 
@@ -97,8 +86,7 @@ namespace FaceBook.Services.Controllers
             {
                 return BadRequest("You are not friends");
             }
-
-
+            
             friendToBeRemoved.Friends.Remove(loggedUser);
             loggedUser.Friends.Remove(friendToBeRemoved);
 
@@ -106,7 +94,5 @@ namespace FaceBook.Services.Controllers
 
             return this.Ok();
         }
-
-
     }
 }

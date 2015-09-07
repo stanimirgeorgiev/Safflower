@@ -1,19 +1,12 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-
-
-
-namespace FaceBook.Models
+﻿namespace FaceBook.Models
 {
-    public  class User: IdentityUser
+    using System.Collections.Generic;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
+    public class User: IdentityUser
     {
         private ICollection<Chat> chats;
         private ICollection<ChatRoom> chatRooms;
@@ -34,13 +27,8 @@ namespace FaceBook.Models
             this.groups = new HashSet<Group>();
             this.postLikes = new List<PostLike>();
             this.posts = new HashSet<Post>();
-            //this.WallUser = new WallUser();
         }
 
-
-
-        //public int WallId { get; set; }
-        //[ForeignKey("WallId")]
         public virtual WallUser WallUser { get; set; }
 
         public virtual ICollection<Post> Posts

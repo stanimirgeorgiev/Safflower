@@ -1,13 +1,10 @@
-using System.Data.Entity.ModelConfiguration.Conventions;
-using FaceBook.Data.Migrations;
-using FaceBook.Models;
-
 namespace FaceBook.Data
 {
-    using System;
     using System.Data.Entity;
-    using System.Linq;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System.Data.Entity.ModelConfiguration.Conventions;
+    using FaceBook.Data.Migrations;
+    using FaceBook.Models;
 
     public class FaceBookDb : IdentityDbContext<User>
     {
@@ -47,17 +44,6 @@ namespace FaceBook.Data
                     m.MapRightKey("RightFriendId");
                     m.ToTable("Friends");
                 });
-
-            //modelBuilder.Entity<Wall>()
-            //    .HasRequired(u => u.User)
-            //    //.WithOptional(w => w.Wall);
-            //    .WithMany()
-            //    .HasForeignKey(u => u.AspNetUserId);
-
-            //modelBuilder.Entity<User>()
-            //    .HasRequired(u => u.Wall)
-            //    .WithOptional(w => w.User)
-            //    .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }

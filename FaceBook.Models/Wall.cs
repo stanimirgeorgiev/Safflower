@@ -1,7 +1,6 @@
 ﻿namespace FaceBook.Models
 {
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
     public abstract class Wall
     {

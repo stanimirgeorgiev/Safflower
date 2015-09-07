@@ -26,7 +26,7 @@
                         Username = uw.User.UserName
                     },
                     Posts = uw.Posts
-                        .OrderBy(p => p.PostedOn)
+                        .OrderByDescending(p => p.PostedOn)
                         .Select(p => new PostDataModel()
                         {
                             Id = p.Id,
