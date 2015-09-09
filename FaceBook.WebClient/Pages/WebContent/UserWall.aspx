@@ -1,13 +1,17 @@
 ﻿<%@ Page Title=""
-     Language="C#" 
-    MasterPageFile="~/Site.Master" 
-    AutoEventWireup="true" 
-    CodeBehind="UserWall.aspx.cs" 
+    Language="C#"
+    MasterPageFile="~/Site.Master"
+    AutoEventWireup="true"
+    CodeBehind="UserWall.aspx.cs"
     Inherits="FaceBook.WebClient.Pages.WebContent.UserWall" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-        <div>
+    <div>
+        <asp:LinkButton ID="ButtonAddFriend" Text="Add friend" runat="server" OnClick="ButtonAddFriend_Click" />
+    </div>
+
+    <div>
         <asp:TextBox runat="server" ID="TextBoxPostContent" TextMode="MultiLine" />
         <div>
             <asp:Button Text="Public" runat="server" ID="PublicPost" />
@@ -34,8 +38,8 @@
                 <div><%#: Item.Content %></div>
                 <div>Likes: <%#: Item.LikesCount %></div>
                 <div>
-                    <asp:Button Text="Like" runat="server"  CommandName="<%# Item.Id %>" OnCommand="CommandLikePost" />
-                    <asp:Button Text="Comment" runat="server"  CommandName="<%# Item.Id %>" OnCommand="CommandPostComment" />
+                    <asp:Button Text="Like" runat="server" CommandName="<%# Item.Id %>" OnCommand="CommandLikePost" />
+                    <asp:Button Text="Comment" runat="server" CommandName="<%# Item.Id %>" OnCommand="CommandPostComment" />
                     <br />
                     <asp:TextBox runat="server" TextMode="MultiLine" />
                 </div>
@@ -56,7 +60,7 @@
                                 </div>
                                 <div><%#: Item.Content %></div>
                                 <div>
-                                    <asp:Button Text="Like" runat="server" CommandName="<%# Item.Id %>" OnCommand="CommandLikeComment"/>
+                                    <asp:Button Text="Like" runat="server" CommandName="<%# Item.Id %>" OnCommand="CommandLikeComment" />
                                     <span>Likes: <%#: Item.LikesCount %></span>
                                 </div>
                             </li>

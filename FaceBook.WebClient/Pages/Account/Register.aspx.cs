@@ -38,7 +38,7 @@
                     new KeyValuePair<string, string>("grant_type", "password")
                 });
 
-                var response1 = httpClient.PostAsync(EndPoints.Login, content).Result;
+                var response1 = httpClient1.PostAsync(EndPoints.Login, content1).Result;
 
 
                 var loginData = response1.Content.ReadAsAsync<LoginBindingModel>().Result;

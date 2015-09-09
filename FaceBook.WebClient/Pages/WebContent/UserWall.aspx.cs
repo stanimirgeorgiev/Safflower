@@ -114,5 +114,20 @@
 
             Response.Redirect(Request.RawUrl);
         }
+
+        protected void ButtonAddFriend_Click(object sender, EventArgs e)
+        {
+            //var httpClient = new HttpClient();
+            //var userAccessToken = Session["AccessToken"];
+            //var userWallId = Request.QueryString["uid"];
+            ////var postId = e.CommandName;
+            //var bearer = "Bearer " + userAccessToken;
+            //httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
+
+            //var postQuery = String.Format(EndPoints.LikePost, postId);
+            //var response = httpClient.PostAsync(postQuery, null).Result;
+
+            //Response.Redirect(Request.RawUrl);
+        }
     }
 }
