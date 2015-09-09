@@ -137,14 +137,30 @@
 
         protected void ButtonAddFriend_Click(object sender, EventArgs e)
         {
-            var httpClient = new HttpClient();
-            var userAccessToken = Session["AccessToken"];
-            var userWallId = Request.QueryString["uid"];
-            var bearer = "Bearer " + userAccessToken;
-            httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
+            LinkButton button = sender as LinkButton;
 
-            var postQuery = String.Format(EndPoints.AddFriend, userWallId);
-            var response = httpClient.PutAsync(postQuery, null).Result;
+            if (button.Text == "Add frined")
+            {
+                var httpClient = new HttpClient();
+                var userAccessToken = Session["AccessToken"];
+                var userWallId = Request.QueryString["uid"];
+                var bearer = "Bearer " + userAccessToken;
+                httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
+
+                var postQuery = String.Format(EndPoints.AddFriend, userWallId);
+                var response = httpClient.PutAsync(postQuery, null).Result;
+            }
+            else
+            {
+                var httpClient = new HttpClient();
+                var userAccessToken = Session["AccessToken"];
+                var userWallId = Request.QueryString["uid"];
+                var bearer = "Bearer " + userAccessToken;
+                httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
+
+                var postQuery = String.Format(EndPoints.RemoveFriend, userWallId);
+                var response = httpClient.PutAsync(postQuery, null).Result;
+            }
 
             Response.Redirect(Request.RawUrl);
         }

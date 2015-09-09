@@ -38,6 +38,24 @@
         }
 
         [HttpGet]
+        [Route("api/users/friends")]
+        public IHttpActionResult GetUserFriends()
+        {
+            var loggedUserId = this.User.Identity.GetUserId();
+            var loggedUser = this.Data.Users.Find(loggedUserId);
+
+            var data = loggedUser.Friends
+                .Select(u => new UserDataModel
+                {
+                    Username = u.UserName,
+                    Email = u.Email,
+                    UserId = u.Id
+                });
+
+            return this.Ok(data);
+        }
+
+        [HttpGet]
         [Route("api/users/info")]
         public IHttpActionResult GetUserInfo()
         {
