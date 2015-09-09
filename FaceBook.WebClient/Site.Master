@@ -1,6 +1,6 @@
-﻿<%@ Master Language="C#" 
-    AutoEventWireup="true" 
-    CodeBehind="Site.master.cs" 
+﻿<%@ Master Language="C#"
+    AutoEventWireup="true"
+    CodeBehind="Site.master.cs"
     Inherits="FaceBook.WebClient.SiteMaster" %>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -59,8 +59,10 @@
                         <li><a runat="server" href="~/Pages/Account/Register.aspx">Register</a></li>
                         <li>
                             <div>
-                                <asp:TextBox runat="server" ID="SearchedQueryTextBox"/>
-                                <asp:LinkButton Text="Search" runat="server" OnClick="ClickSearchBox"/>
+                                <asp:TextBox ValidationGroup="Search" runat="server" ID="SearchedQueryTextBox" />
+                                <asp:LinkButton Text="Search" ValidationGroup="Search" runat="server" OnClick="ClickSearchBox" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="SearchedQueryTextBox"
+                                    CssClass="text-danger" ErrorMessage="Field is required!" ValidationGroup="Search" />
                             </div>
                         </li>
                     </ul>

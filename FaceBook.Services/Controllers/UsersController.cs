@@ -29,7 +29,9 @@
                 .OrderBy(r => r.UserName)
                 .Select(u => new UserDataModel
                 {
-                    Username = u.UserName
+                    Username = u.UserName,
+                    Email = u.Email,
+                    UserId = u.Id
                 });
 
             return this.Ok(result);
