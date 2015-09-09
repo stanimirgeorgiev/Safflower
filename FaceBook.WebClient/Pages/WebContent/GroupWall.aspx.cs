@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.UI;
@@ -15,21 +16,25 @@ namespace FaceBook.WebClient.Pages.WebContent
         protected void Page_Load(object sender, EventArgs e)
         {
             var httpClient = new HttpClient();
-            var userWallId = Request.QueryString["uid"];
+            var groupWallId = Request.QueryString["uid"];
             var userAccessToken = Session["AccessToken"];
             var bearer = "Bearer " + userAccessToken;
             httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
 
-            //var response = httpClient.GetAsync(String.Format(EndPoints.AreFriends, userWallId)).Result;
+            var response = httpClient.GetAsync(String.Format(EndPoints.IsUserInGroup, groupWallId)).Result;
 
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    this.JoinGroupButton.Text = "Leave group";
-            //}
-            //else
-            //{
-            //    this.JoinGroupButton.Text = "Join group";
-            //}
+            if (response.StatusCode == HttpStatusCode.Conflict)
+            {
+                this.JoinGroupButton.Text = "Group owner";
+            }
+            else if (response.IsSuccessStatusCode)
+            {
+                this.JoinGroupButton.Text = "Leave group";
+            }
+            else
+            {
+                this.JoinGroupButton.Text = "Join group";
+            }
         }
 
         public IEnumerable<PostBindingModel> Select()
@@ -65,7 +70,7 @@ namespace FaceBook.WebClient.Pages.WebContent
         {
             var httpClient = new HttpClient();
             var userAccessToken = Session["AccessToken"];
-            var userWallId = Request.QueryString["uid"];
+            var groupWallId = Request.QueryString["uid"];
             var bearer = "Bearer " + userAccessToken;
             var postContent = this.TextBoxPostContent.Text;
             httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
@@ -73,7 +78,7 @@ namespace FaceBook.WebClient.Pages.WebContent
             var content = new FormUrlEncodedContent(new[]
             {
                 new KeyValuePair<string, string>("content", postContent),
-                new KeyValuePair<string, string>("id", userWallId)
+                new KeyValuePair<string, string>("id", groupWallId)
             });
 
             var response = httpClient.PostAsync(EndPoints.PostToGroupWall, content).Result;
@@ -139,7 +144,25 @@ namespace FaceBook.WebClient.Pages.WebContent
         {
             LinkButton button = sender as LinkButton;
 
-            if (button.Text == "Add frined")
+            if (button.Text == "Join group")
+            {
+                var httpClient = new HttpClient();
+                var userAccessToken = Session["AccessToken"];
+                var groupWallId = Request.QueryString["uid"];
+                var userId = Session["userId"] as string;
+                var bearer = "Bearer " + userAccessToken;
+                httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
+
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("GroupId", groupWallId),
+                    new KeyValuePair<string, string>("UserId", userId)
+                });
+
+                var postQuery = String.Format(EndPoints.JoinGroup);
+                var response = httpClient.PostAsync(postQuery, content).Result;
+            }
+            else if (button.Text == "Leave group")
             {
                 var httpClient = new HttpClient();
                 var userAccessToken = Session["AccessToken"];
@@ -147,19 +170,12 @@ namespace FaceBook.WebClient.Pages.WebContent
                 var bearer = "Bearer " + userAccessToken;
                 httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
 
-                var postQuery = String.Format(EndPoints.AddFriend, userWallId);
-                var response = httpClient.PutAsync(postQuery, null).Result;
+                var postQuery = String.Format(EndPoints.LeaveGroup, userWallId);
+                var response = httpClient.PostAsync(postQuery, null).Result;
             }
             else
             {
-                var httpClient = new HttpClient();
-                var userAccessToken = Session["AccessToken"];
-                var userWallId = Request.QueryString["uid"];
-                var bearer = "Bearer " + userAccessToken;
-                httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
 
-                var postQuery = String.Format(EndPoints.RemoveFriend, userWallId);
-                var response = httpClient.PutAsync(postQuery, null).Result;
             }
 
             Response.Redirect(Request.RawUrl);

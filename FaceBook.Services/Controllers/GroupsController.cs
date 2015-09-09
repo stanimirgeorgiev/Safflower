@@ -166,6 +166,12 @@
                 .FirstOrDefault(u => u.Id == groupId);
 
             var isInGroup = groupToBeAdded.Users.Contains(loggedUser);
+            var isCreator = groupToBeAdded.Creator.Id == loggedUserId;
+            if (isCreator)
+            {
+                return this.Conflict();
+            }
+
             if (isInGroup)
             {
                 return this.Ok();
