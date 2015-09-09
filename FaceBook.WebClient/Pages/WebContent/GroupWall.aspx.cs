@@ -20,16 +20,16 @@ namespace FaceBook.WebClient.Pages.WebContent
             var bearer = "Bearer " + userAccessToken;
             httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
 
-            var response = httpClient.GetAsync(String.Format(EndPoints.AreFriends, userWallId)).Result;
+            //var response = httpClient.GetAsync(String.Format(EndPoints.AreFriends, userWallId)).Result;
 
-            if (response.IsSuccessStatusCode)
-            {
-                this.JoinGroupButton.Text = "Leave group";
-            }
-            else
-            {
-                this.JoinGroupButton.Text = "Join group";
-            }
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    this.JoinGroupButton.Text = "Leave group";
+            //}
+            //else
+            //{
+            //    this.JoinGroupButton.Text = "Join group";
+            //}
         }
 
         public IEnumerable<PostBindingModel> Select()
@@ -45,12 +45,6 @@ namespace FaceBook.WebClient.Pages.WebContent
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = response.Content.ReadAsAsync<GroupWallBindingModel>().Result;
-
-                if (responseContent.Posts == null)
-                {
-                    return new List<PostBindingModel>();
-                }
-
                 return responseContent.Posts;
             }
 
@@ -82,7 +76,7 @@ namespace FaceBook.WebClient.Pages.WebContent
                 new KeyValuePair<string, string>("id", userWallId)
             });
 
-            var response = httpClient.PostAsync(EndPoints.PostToUserWall, content).Result;
+            var response = httpClient.PostAsync(EndPoints.PostToGroupWall, content).Result;
 
             Response.Redirect(Request.RawUrl);
         }

@@ -1,4 +1,6 @@
-﻿namespace FaceBook.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace FaceBook.Models
 {
     using System.Collections.Generic;
     using System.Security.Claims;
@@ -13,9 +15,10 @@
         private ICollection<Comment> comments;
         private ICollection<CommentLike> commentLikes;
         private ICollection<User> friends;
-        private ICollection<Group> groups;
         private ICollection<PostLike> postLikes;
         private ICollection<Post> posts;
+        private ICollection<Group> groups;
+        private ICollection<Group> createdgroups;
 
         public User()
         {
@@ -27,6 +30,7 @@
             this.groups = new HashSet<Group>();
             this.postLikes = new List<PostLike>();
             this.posts = new HashSet<Post>();
+            this.createdgroups = new HashSet<Group>();
         }
 
         public virtual WallUser WallUser { get; set; }
@@ -79,6 +83,14 @@
             get { return this.chatRooms; }
             set { this.chatRooms = value; }
         }
+
+        [InverseProperty("Creator")]
+        public virtual ICollection<Group> CreatedGroups
+        {
+            get { return this.createdgroups; }
+            set { this.createdgroups = value; }
+        }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(
             UserManager<User> manager,
             string authenticationType)

@@ -78,11 +78,12 @@
             }
 
             var loggedUserId = this.User.Identity.GetUserId();
+            var findGroup = this.Data.Groups.Find(model.Id);
 
             var post = new Post()
             {
                 UserId = loggedUserId,
-                WallGroupId = model.Id,
+                WallGroupId = findGroup.Id,
                 Content = model.Content,
                 PostedOn = DateTime.Now
             };

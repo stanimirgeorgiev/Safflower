@@ -13,8 +13,8 @@
 
         public string Name { get; set; }
 
-        public UserDataModel Owner { get; set; }
-
+        public string Creator { get; set; }
+        
         public IEnumerable<PostDataModel> Posts { get; set; }
 
         public static Expression<Func<WallGroup, GroupWallDataModel>> Create
@@ -25,6 +25,7 @@
                 {
                     Id = uw.Id,
                     Name = uw.Group.Name,
+                    Creator = uw.Group.Creator.UserName,
                     Posts = uw.Posts
                         .OrderByDescending(p => p.PostedOn)
                         .Select(p => new PostDataModel()
@@ -36,10 +37,6 @@
                                 Username = p.User.UserName
                             },
                             PostedOn = p.PostedOn,
-                            WallOwner = new UserDataModel()
-                            {
-                                Username = p.WallUser.User.UserName
-                            },
                             LikesCount = p.Likes.Count,
                             IsLikedByCurrentUser = p.IsLikedByCurrentUser,
                             Comments = p.Comments

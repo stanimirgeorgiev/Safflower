@@ -45,6 +45,7 @@
             return this.Ok(data);
         }
 
+
         [HttpGet]
         [Route("api/users/GetNewsFeed")]
         public IHttpActionResult GetNewsFeed()

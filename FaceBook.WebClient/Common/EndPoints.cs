@@ -18,5 +18,6 @@
         public const string GetUserFriends =    "http://localhost:30446/api/users/friends";
         public const string CreateGroup =       "http://localhost:30446/api/groups/create";
         public const string GetUserGroups =     "http://localhost:30446/api/groups/userGroups";
+        public const string PostToGroupWall =   "http://localhost:30446/api/group/posts";
     }
 }

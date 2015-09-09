@@ -8,6 +8,8 @@ namespace FaceBook.WebClient.Models.BindingModels
 
         public string Name { get; set; }
 
+        public string Creator { get; set; }
+
         public UserBindingModel Owner { get; set; }
 
         public IEnumerable<PostBindingModel> Posts { get; set; }

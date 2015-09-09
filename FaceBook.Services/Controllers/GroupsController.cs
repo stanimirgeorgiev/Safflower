@@ -47,8 +47,8 @@
 
                 Group group = new Group();
                 group.Name = model.Name;
-
-                //this.Data.Groups.Add(group);
+                group.WallGroup = new WallGroup();
+                
                 currentUser.Groups.Add(group);
                 this.Data.SaveChanges();
 
@@ -153,6 +153,26 @@
                 .ToList();
 
             return this.Ok(data);
+        }
+
+        [HttpGet]
+        [Route("api/users/group/{groupId}")]
+        public IHttpActionResult IsUserInGroup(Guid groupId)
+        {
+            var loggedUserId = this.User.Identity.GetUserId();
+            var loggedUser = this.Data.Users.Find(loggedUserId);
+            var groupToBeAdded = this.Data.Groups
+                .FirstOrDefault(u => u.Id == groupId);
+
+            var isInGroup = groupToBeAdded.Users.Contains(loggedUser);
+            if (isInGroup)
+            {
+                return this.Ok();
+            }
+            else
+            {
+                return this.BadRequest();
+            }
         }
     }
 
