@@ -135,6 +135,25 @@
 
             return Ok(new GroupsGetViewModels(group));
         }
+
+        [HttpGet]
+        [Route("api/groups/userGroups")]
+        public IHttpActionResult GetUserGroups()
+        {
+            var loggedUserId = this.User.Identity.GetUserId();
+            var loggedUser = this.Data.Users.Find(loggedUserId);
+
+            var data = loggedUser.Groups
+                .Select(u => new GroupDataModel()
+                {
+                    Id = u.Id.ToString(),
+                    Name = u.Name,
+                    NumberOfParticipants = u.Users.Count.ToString()
+                })
+                .ToList();
+
+            return this.Ok(data);
+        }
     }
 
 }

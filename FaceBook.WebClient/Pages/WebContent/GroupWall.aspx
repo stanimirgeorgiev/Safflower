@@ -1,27 +1,14 @@
-﻿<%@ Page Title="Home"
+﻿<%@ Page Title="" 
     Language="C#"
-    MasterPageFile="~/Site.Master"
-    AutoEventWireup="true"
-    CodeBehind="Home.aspx.cs"
-    Inherits="FaceBook.WebClient.Pages.WebContent.Home" %>
+     MasterPageFile="~/Site.Master"
+     AutoEventWireup="true"
+     CodeBehind="GroupWall.aspx.cs"
+     Inherits="FaceBook.WebClient.Pages.WebContent.GroupWall" %>
 
-<%@ MasterType VirtualPath="~/Site.Master" %>
-
-<asp:Content ID="Home" ContentPlaceHolderID="MainContent" runat="server">
-
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    
     <div>
-        <asp:LinkButton Text="My Groups" ID="MyGroupsLinkButton" runat="server" OnClick="MyGroupsLinkButton_OnClick"/>
-        <asp:LinkButton Text="Friends" Id="FriendsLinkButton" runat="server" OnClick="FriendsLinkButton_Click"/>
-        <asp:LinkButton Text="Create Group" ID="CreateGroupLinkButton" runat="server" OnClick="CreateGroupLinkButton_Click"/>
-    </div>
-
-    <div>
-        <asp:Panel ID="PanelCreateGroup" runat="server" Visible="false">
-            <asp:Label Text="Name" runat="server"/>
-            <asp:TextBox runat="server" ID="TextBoxCreateGroupName" TextMode="SingleLine"/>
-            <asp:Button Text="Create" runat="server" ID="AgreeCreateGroupButton" OnClick="AgreeCreateGroupButton_Click"/>
-            <asp:Button Text="Cancel" runat="server" ID="CancelCreateGroupButton" OnClick="CancelCreateGroupButton_Click"/>
-        </asp:Panel>
+        <asp:LinkButton ID="JoinGroupButton" Text="Join group" runat="server" OnClick="ButtonJoinGroup_Click" />
     </div>
 
     <div>
@@ -51,8 +38,8 @@
                 <div><%#: Item.Content %></div>
                 <div>Likes: <%#: Item.LikesCount %></div>
                 <div>
-                    <asp:Button Text="Like" runat="server"  CommandName="<%# Item.Id %>" OnCommand="CommandLikePost" />
-                    <asp:Button Text="Comment" runat="server"  CommandName="<%# Item.Id %>" OnCommand="CommandPostComment" />
+                    <asp:Button Text="Like" runat="server" CommandName="<%# Item.Id %>" OnCommand="CommandLikePost" />
+                    <asp:Button Text="Comment" runat="server" CommandName="<%# Item.Id %>" OnCommand="CommandPostComment" />
                     <br />
                     <asp:TextBox runat="server" TextMode="MultiLine" />
                 </div>
@@ -73,7 +60,7 @@
                                 </div>
                                 <div><%#: Item.Content %></div>
                                 <div>
-                                    <asp:Button Text="Like" runat="server" CommandName="<%# Item.Id %>" OnCommand="CommandLikeComment"/>
+                                    <asp:Button Text="Like" runat="server" CommandName="<%# Item.Id %>" OnCommand="CommandLikeComment" />
                                     <span>Likes: <%#: Item.LikesCount %></span>
                                 </div>
                             </li>
