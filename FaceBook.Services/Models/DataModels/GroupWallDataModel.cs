@@ -7,9 +7,9 @@
     using FaceBook.Models;
     using FaceBook.Services.Controllers;
 
-    public class GroupWallDataModel : BaseApiController
+    public class GroupWallDataModel 
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
@@ -23,7 +23,7 @@
             {
                 return uw => new GroupWallDataModel()
                 {
-                    Id = uw.Id,
+                    Id = uw.Id.ToString(),
                     Name = uw.Group.Name,
                     Creator = uw.Group.Creator.UserName,
                     Posts = uw.Posts

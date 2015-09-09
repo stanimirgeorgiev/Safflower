@@ -48,6 +48,7 @@
                 Group group = new Group();
                 group.Name = model.Name;
                 group.WallGroup = new WallGroup();
+                group.CreatorId = currentUserId;
                 
                 currentUser.Groups.Add(group);
                 this.Data.SaveChanges();
