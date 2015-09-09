@@ -8,6 +8,8 @@
 
         public string Name { get; set; }
 
+        public string Creator { get; set; }
+
         public string NumberOfParticipants { get; set; }
     }
 }
