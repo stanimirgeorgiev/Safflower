@@ -20,8 +20,10 @@
 
             <ItemTemplate>
                 <div>
-                    <p>Name: <%#: Item.Username %></p>
-                    <p>Email: <%#: Item.Email %></p>
+                    <asp:LinkButton runat="server" CommandName="<%# Item.UserId %>" OnCommand="GoToUserWall">
+                        <p>Name: <%#: Item.Username %></p>
+                        <p>Email: <%#: Item.Email %></p>
+                    </asp:LinkButton>
                 </div>
             </ItemTemplate>
 

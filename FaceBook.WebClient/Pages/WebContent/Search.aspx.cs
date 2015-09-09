@@ -26,5 +26,10 @@
 
             return responseContent;
         }
+
+        protected void GoToUserWall(object sender, System.Web.UI.WebControls.CommandEventArgs e)
+        {
+            this.Response.Redirect("/Pages/WebContent/UserWall.aspx?uid=" + e.CommandName);
+        }
     }
 }

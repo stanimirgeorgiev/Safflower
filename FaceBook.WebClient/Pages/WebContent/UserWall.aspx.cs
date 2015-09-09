@@ -1,24 +1,26 @@
 ﻿namespace FaceBook.WebClient.Pages.WebContent
 {
+    using FaceBook.WebClient.Common;
+    using FaceBook.WebClient.Models.BindingModels;
     using System;
     using System.Collections.Generic;
-    using FaceBook.WebClient.Models;
+    using System.Linq;
     using System.Net.Http;
-    using Common;
-    using System.Web.UI.WebControls;
-    using Models.BindingModels;
+    using System.Web;
     using System.Web.UI;
+    using System.Web.UI.WebControls;
 
-    public partial class Home : System.Web.UI.Page
+    public partial class UserWall : Page
     {
         public IEnumerable<PostBindingModel> Select()
         {
             var httpClient = new HttpClient();
+            var userWallId = Request.QueryString["uid"];
             var userAccessToken = Session["AccessToken"];
             var bearer = "Bearer " + userAccessToken;
             httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
 
-            var response = httpClient.GetAsync(String.Format(EndPoints.GetUserWall, Session["userId"])).Result;
+            var response = httpClient.GetAsync(String.Format(EndPoints.GetUserWall, userWallId)).Result;
 
             if (response.IsSuccessStatusCode)
             {
@@ -43,7 +45,7 @@
         {
             var httpClient = new HttpClient();
             var userAccessToken = Session["AccessToken"];
-            var userWallId = Session["UserId"] as string;
+            var userWallId = Request.QueryString["uid"];
             var bearer = "Bearer " + userAccessToken;
             var postContent = this.TextBoxPostContent.Text;
             httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
@@ -63,7 +65,7 @@
         {
             var httpClient = new HttpClient();
             var userAccessToken = Session["AccessToken"];
-            var userWallId = Session["UserId"] as string;
+            var userWallId = Request.QueryString["uid"];
             var commentId = e.CommandName;
             var bearer = "Bearer " + userAccessToken;
             httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
@@ -78,7 +80,7 @@
         {
             var httpClient = new HttpClient();
             var userAccessToken = Session["AccessToken"];
-            var userWallId = Session["UserId"] as string;
+            var userWallId = Request.QueryString["uid"];
             var postId = e.CommandName;
             var bearer = "Bearer " + userAccessToken;
 
@@ -102,7 +104,7 @@
         {
             var httpClient = new HttpClient();
             var userAccessToken = Session["AccessToken"];
-            var userWallId = Session["UserId"] as string;
+            var userWallId = Request.QueryString["uid"];
             var postId = e.CommandName;
             var bearer = "Bearer " + userAccessToken;
             httpClient.DefaultRequestHeaders.Add("Authorization", bearer);

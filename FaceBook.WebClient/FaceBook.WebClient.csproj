@@ -140,6 +140,7 @@
     <Content Include="Pages\Account\Register.aspx" />
     <Content Include="Pages\WebContent\Home.aspx" />
     <Content Include="Pages\WebContent\Search.aspx" />
+    <Content Include="Pages\WebContent\UserWall.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -250,6 +251,13 @@
     </Compile>
     <Compile Include="Pages\WebContent\Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WebContent\UserWall.aspx.cs">
+      <DependentUpon>UserWall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WebContent\UserWall.aspx.designer.cs">
+      <DependentUpon>UserWall.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
