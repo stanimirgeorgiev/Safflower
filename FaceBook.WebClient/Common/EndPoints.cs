@@ -14,5 +14,6 @@
         public const string AddFriend =     "http://localhost:30446/api/users/addfriend/{0}";
         public const string AreFriends =    "http://localhost:30446/api/users/{0}";
         public const string RemoveFriend =  "http://localhost:30446/api/users/removefriend/{0}";
+        public const string GetUserFriends = "http://localhost:30446/api/users/friends";
     }
 }

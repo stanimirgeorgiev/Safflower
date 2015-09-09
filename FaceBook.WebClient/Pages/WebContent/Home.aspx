@@ -10,6 +10,10 @@
 <asp:Content ID="Home" ContentPlaceHolderID="MainContent" runat="server">
 
     <div>
+        <asp:LinkButton Text="Friends" Id="FriendsLinkButton" runat="server" OnClick="FriendsLinkButton_Click"/>
+    </div>
+
+    <div>
         <asp:TextBox runat="server" ID="TextBoxPostContent" TextMode="MultiLine" />
         <div>
             <asp:Button Text="Public" runat="server" ID="PublicPost" />

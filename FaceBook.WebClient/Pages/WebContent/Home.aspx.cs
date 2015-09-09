@@ -112,5 +112,10 @@
 
             Response.Redirect(Request.RawUrl);
         }
+
+        protected void FriendsLinkButton_Click(object sender, EventArgs e)
+        {
+            this.Response.Redirect("/Pages/WebContent/Friends.aspx");
+        }
     }
 }
