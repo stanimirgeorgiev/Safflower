@@ -7,6 +7,7 @@
     using FaceBook.Models;
     using FaceBook.Services.Models.BindingModels;
     using FaceBook.Services.Models.DataModels;
+    using Microsoft.AspNet.Identity;
 
     [Authorize]
     public class GroupsController : BaseApiController
@@ -41,14 +42,18 @@
             }
             else
             {
+                var currentUserId = this.User.Identity.GetUserId();
+                var currentUser = this.Data.Users.Find(currentUserId);
+
                 Group group = new Group();
                 group.Name = model.Name;
-                this.Data.Groups.Add(group);
+
+                //this.Data.Groups.Add(group);
+                currentUser.Groups.Add(group);
                 this.Data.SaveChanges();
 
                 return Ok(new GroupsGetViewModels(group));
             }
-
         }
 
         //POST api/groups/adduser

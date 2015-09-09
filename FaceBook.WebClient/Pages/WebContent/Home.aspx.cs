@@ -117,5 +117,35 @@
         {
             this.Response.Redirect("/Pages/WebContent/Friends.aspx");
         }
+
+        protected void CreateGroupLinkButton_Click(object sender, EventArgs e)
+        {
+            this.PanelCreateGroup.Visible = true;
+        }
+
+        protected void AgreeCreateGroupButton_Click(object sender, EventArgs e)
+        {
+            var httpClient = new HttpClient();
+            var userAccessToken = Session["AccessToken"];
+            var groupName = this.TextBoxCreateGroupName.Text;
+
+            var bearer = "Bearer " + userAccessToken;
+            httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
+
+            var content = new FormUrlEncodedContent(new[]
+{
+                new KeyValuePair<string, string>("Name", groupName)
+            });
+
+            var postQuery = String.Format(EndPoints.CreateGroup);
+            var response = httpClient.PostAsync(postQuery, content).Result;
+
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void CancelCreateGroupButton_Click(object sender, EventArgs e)
+        {
+            this.PanelCreateGroup.Visible = false;
+        }
     }
 }

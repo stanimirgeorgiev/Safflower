@@ -22,6 +22,51 @@ namespace FaceBook.WebClient.Pages.WebContent {
         protected global::System.Web.UI.WebControls.LinkButton FriendsLinkButton;
         
         /// <summary>
+        /// CreateGroupLinkButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton CreateGroupLinkButton;
+        
+        /// <summary>
+        /// PanelCreateGroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelCreateGroup;
+        
+        /// <summary>
+        /// TextBoxCreateGroupName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCreateGroupName;
+        
+        /// <summary>
+        /// AgreeCreateGroupButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AgreeCreateGroupButton;
+        
+        /// <summary>
+        /// CancelCreateGroupButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CancelCreateGroupButton;
+        
+        /// <summary>
         /// TextBoxPostContent control.
         /// </summary>
         /// <remarks>

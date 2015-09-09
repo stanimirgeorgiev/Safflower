@@ -11,6 +11,16 @@
 
     <div>
         <asp:LinkButton Text="Friends" Id="FriendsLinkButton" runat="server" OnClick="FriendsLinkButton_Click"/>
+        <asp:LinkButton Text="Create Group" ID="CreateGroupLinkButton" runat="server" OnClick="CreateGroupLinkButton_Click"/>
+    </div>
+
+    <div>
+        <asp:Panel ID="PanelCreateGroup" runat="server" Visible="false">
+            <asp:Label Text="Name" runat="server"/>
+            <asp:TextBox runat="server" ID="TextBoxCreateGroupName" TextMode="SingleLine"/>
+            <asp:Button Text="Create" runat="server" ID="AgreeCreateGroupButton" OnClick="AgreeCreateGroupButton_Click"/>
+            <asp:Button Text="Cancel" runat="server" ID="CancelCreateGroupButton" OnClick="CancelCreateGroupButton_Click"/>
+        </asp:Panel>
     </div>
 
     <div>
