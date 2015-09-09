@@ -166,12 +166,19 @@ namespace FaceBook.WebClient.Pages.WebContent
             {
                 var httpClient = new HttpClient();
                 var userAccessToken = Session["AccessToken"];
-                var userWallId = Request.QueryString["uid"];
+                var groupWallId = Request.QueryString["uid"];
+                var userId = Session["userId"] as string;
                 var bearer = "Bearer " + userAccessToken;
                 httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
 
-                var postQuery = String.Format(EndPoints.LeaveGroup, userWallId);
-                var response = httpClient.PostAsync(postQuery, null).Result;
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("GroupId", groupWallId),
+                    new KeyValuePair<string, string>("UserId", userId)
+                });
+
+                var postQuery = String.Format(EndPoints.LeaveGroup);
+                var response = httpClient.PostAsync(postQuery, content).Result;
             }
             else
             {

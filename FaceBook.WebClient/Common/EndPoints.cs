@@ -21,6 +21,6 @@
         public const string PostToGroupWall =   "http://localhost:30446/api/group/posts";
         public const string IsUserInGroup =     "http://localhost:30446/api/users/group/{0}";
         public const string JoinGroup =         "http://localhost:30446/api/groups/adduser";
-        public const string LeaveGroup =        "http://localhost:30446/api/groups/adduser";
+        public const string LeaveGroup =        "http://localhost:30446/api/groups/removeuser";
     }
 }

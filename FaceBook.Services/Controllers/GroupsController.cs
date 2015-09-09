@@ -82,6 +82,30 @@
             }
         }
 
+        [HttpPost]
+        [Route("api/groups/removeuser")]
+        public IHttpActionResult RemoveUser([FromBody] GroupAddUserBindingModels model)
+        {
+            if (model == null)
+            {
+                return this.BadRequest("Model cannot be null (no data in request)");
+            }
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+            else
+            {
+                Group group = this.Data.Groups.Find(model.GroupId);
+                User user = this.Data.Users.Find(model.UserId);
+                group.Users.Remove(user);
+                this.Data.SaveChanges();
+                string result = string.Format("User {0} successfully quit group {1}!", user.UserName, group.Name);
+                return Ok(result);
+            }
+        }
+
         //PATCH api/groups/update
         [HttpPatch]
         [Route("api/groups/update")]
