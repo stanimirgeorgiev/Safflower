@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace FaceBook.WebClient
+﻿namespace FaceBook.WebClient
 {
+    using System;
+    using System.Web.UI;
+
     public partial class SiteMaster : MasterPage
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void ClickSearchBox(object sender, EventArgs e)
         {
-
+            string queryParam = string.Format("?q={0}", this.SearchedQueryTextBox.Text);
+            Response.Redirect("~/Pages/WebContent/Search" + queryParam);
         }
     }
 }

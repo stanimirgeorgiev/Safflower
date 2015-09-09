@@ -10,10 +10,11 @@
     public class WallsController : BaseApiController
     {
         [HttpGet]
-        [Route("api/users/{userId}/wall")]
-        public IHttpActionResult GetUserWall(string userId)
+        [Route("api/users/wall")]
+        public IHttpActionResult GetUserWall()
         {
-            var user = this.Data.Users.Find(userId);
+            var currentUserId = this.User.Identity.GetUserId();
+            var user = this.Data.Users.Find(currentUserId);
             if (user == null)
             {
                 return this.NotFound();

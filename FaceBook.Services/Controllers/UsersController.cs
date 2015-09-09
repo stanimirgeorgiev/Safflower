@@ -35,6 +35,22 @@
             return this.Ok(result);
         }
 
+        [HttpGet]
+        [Route("api/users/info")]
+        public IHttpActionResult GetUserInfo()
+        {
+            var loggedUserId = this.User.Identity.GetUserId();
+            var user = this.Data.Users.Find(loggedUserId);
+
+            var data = new UserDataModel()
+            {
+                UserId = loggedUserId,
+                Username = user.UserName
+            };
+
+            return this.Ok(data);
+        }
+
         [HttpPut]
         [Route("api/users/addfriend/{userId}")]
         public IHttpActionResult AddFriend(string userId)

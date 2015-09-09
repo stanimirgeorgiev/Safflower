@@ -4,6 +4,7 @@
     AutoEventWireup="true"
     CodeBehind="Register.aspx.cs"
     Inherits="FaceBook.WebClient.Pages.Account.Register" %>
+<%@ MasterType VirtualPath="~/Site.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

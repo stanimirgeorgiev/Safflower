@@ -57,11 +57,19 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/Pages/Account/Login.aspx">Login</a></li>
                         <li><a runat="server" href="~/Pages/Account/Register.aspx">Register</a></li>
+                        <li>
+                            <div>
+                                <asp:TextBox runat="server" ID="SearchedQueryTextBox"/>
+                                <asp:LinkButton Text="Search" runat="server" OnClick="ClickSearchBox"/>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="container body-content">
+            <asp:Label Visible="true" ID="UserAccessToken" runat="server" />
+            <asp:Label Visible="true" ID="UserId" runat="server" />
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />

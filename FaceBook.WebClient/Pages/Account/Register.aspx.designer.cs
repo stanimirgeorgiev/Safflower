@@ -47,5 +47,17 @@ namespace FaceBook.WebClient.Pages.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox ConfirmPassword;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new FaceBook.WebClient.SiteMaster Master {
+            get {
+                return ((FaceBook.WebClient.SiteMaster)(base.Master));
+            }
+        }
     }
 }

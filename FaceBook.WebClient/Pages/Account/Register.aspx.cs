@@ -5,6 +5,7 @@
     using System.Net;
     using System.Net.Http;
     using FaceBook.WebClient.Common;
+    using Models.BindingModels;
 
     public partial class Register : System.Web.UI.Page
     {
@@ -27,6 +28,11 @@
 
             if (response.IsSuccessStatusCode)
             {
+                var loginData = response.Content.ReadAsAsync<LoginBindingModel>().Result;
+
+                Session["UserName"] = loginData.UserName;
+                Session["AccessToken"] = loginData.Access_Token;
+
                 this.Response.Redirect("/Pages/WebContent/Home.aspx");
             }
             else

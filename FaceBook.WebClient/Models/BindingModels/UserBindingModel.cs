@@ -1,6 +1,6 @@
-﻿namespace FaceBook.Services.Models.DataModels
+﻿namespace FaceBook.WebClient.Models.BindingModels
 {
-    public class UserDataModel
+    public class UserBindingModel
     {
         public string Username { get; set; }
 

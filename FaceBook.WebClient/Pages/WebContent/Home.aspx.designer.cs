@@ -13,6 +13,33 @@ namespace FaceBook.WebClient.Pages.WebContent {
     public partial class Home {
         
         /// <summary>
+        /// TextBoxPostContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPostContent;
+        
+        /// <summary>
+        /// PublicPost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button PublicPost;
+        
+        /// <summary>
+        /// PostButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button PostButton;
+        
+        /// <summary>
         /// ListViewPosts control.
         /// </summary>
         /// <remarks>
@@ -20,5 +47,17 @@ namespace FaceBook.WebClient.Pages.WebContent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ListViewPosts;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new FaceBook.WebClient.SiteMaster Master {
+            get {
+                return ((FaceBook.WebClient.SiteMaster)(base.Master));
+            }
+        }
     }
 }

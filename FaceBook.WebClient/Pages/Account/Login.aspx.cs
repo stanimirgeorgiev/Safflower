@@ -6,6 +6,8 @@
     using System.Web;
     using System.Web.UI;
     using FaceBook.WebClient.Common;
+    using System.Web.UI.WebControls;
+    using Models.BindingModels;
 
     public partial class Login : Page
     {
@@ -41,6 +43,18 @@
 
                 if (response.IsSuccessStatusCode)
                 {
+                    var loginData = response.Content.ReadAsAsync<LoginBindingModel>().Result;
+
+                    var httpClientNested = new HttpClient();
+                    httpClientNested.DefaultRequestHeaders.Add("Authorization", "Bearer " + loginData.Access_Token);
+                    var responseNested = httpClientNested.GetAsync(EndPoints.GetUserInfo).Result;
+
+                    var userInfo = responseNested.Content.ReadAsAsync<UserBindingModel>().Result;
+
+                    Session["UserId"] = userInfo.UserId;
+                    Session["UserName"] = loginData.UserName;
+                    Session["AccessToken"] = loginData.Access_Token;
+
                     this.Response.Redirect("/Pages/WebContent/Home.aspx");
                 }
                 else
