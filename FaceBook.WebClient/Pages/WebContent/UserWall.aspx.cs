@@ -12,6 +12,26 @@
 
     public partial class UserWall : Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            var httpClient = new HttpClient();
+            var userWallId = Request.QueryString["uid"];
+            var userAccessToken = Session["AccessToken"];
+            var bearer = "Bearer " + userAccessToken;
+            httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
+
+            var response = httpClient.GetAsync(String.Format(EndPoints.AreFriends, userWallId)).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                this.ButtonAddFriend.Text = "Unfriend";
+            }
+            else
+            {
+                this.ButtonAddFriend.Text = "Add frined";
+            }
+        }
+
         public IEnumerable<PostBindingModel> Select()
         {
             var httpClient = new HttpClient();
@@ -117,17 +137,16 @@
 
         protected void ButtonAddFriend_Click(object sender, EventArgs e)
         {
-            //var httpClient = new HttpClient();
-            //var userAccessToken = Session["AccessToken"];
-            //var userWallId = Request.QueryString["uid"];
-            ////var postId = e.CommandName;
-            //var bearer = "Bearer " + userAccessToken;
-            //httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
+            var httpClient = new HttpClient();
+            var userAccessToken = Session["AccessToken"];
+            var userWallId = Request.QueryString["uid"];
+            var bearer = "Bearer " + userAccessToken;
+            httpClient.DefaultRequestHeaders.Add("Authorization", bearer);
 
-            //var postQuery = String.Format(EndPoints.LikePost, postId);
-            //var response = httpClient.PostAsync(postQuery, null).Result;
+            var postQuery = String.Format(EndPoints.AddFriend, userWallId);
+            var response = httpClient.PutAsync(postQuery, null).Result;
 
-            //Response.Redirect(Request.RawUrl);
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

@@ -47,10 +47,31 @@
             var data = new UserDataModel()
             {
                 UserId = loggedUserId,
-                Username = user.UserName
+                Username = user.UserName,
             };
 
             return this.Ok(data);
+        }
+
+        [HttpGet]
+        [Route("api/users/{userId}")]
+        public IHttpActionResult AreUsersFriends(string userId)
+        {
+            var loggedUserId = this.User.Identity.GetUserId();
+            var loggedUser = this.Data.Users.Find(loggedUserId);
+            var friendToBeAdded = this.Data.Users
+                .FirstOrDefault(u => u.Id == userId);
+
+            var areFriends = loggedUser.Friends.Contains(friendToBeAdded);
+
+            if (areFriends)
+            {
+                return this.Ok();
+            }
+            else
+            {
+                return this.BadRequest();
+            }
         }
 
         [HttpPut]

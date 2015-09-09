@@ -11,5 +11,7 @@
         public const string LikePost =      "http://localhost:30446/api/posts/{0}/likes";
         public const string LikeComment =   "http://localhost:30446/api/comments/{0}/likes";
         public const string SearchUser =    "http://localhost:30446/api/users/search?Name=";
+        public const string AddFriend =     "http://localhost:30446/api/users/addfriend/{0}";
+        public const string AreFriends =    "http://localhost:30446/api/users/{0}";
     }
 }
