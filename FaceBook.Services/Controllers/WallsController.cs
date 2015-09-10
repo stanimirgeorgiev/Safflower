@@ -47,7 +47,7 @@
 
 
         [HttpGet]
-        [Route("api/users/GetNewsFeed")]
+        [Route("api/users/news/feed")]
         public IHttpActionResult GetNewsFeed()
         {
             var loggedUserId = this.User.Identity.GetUserId();

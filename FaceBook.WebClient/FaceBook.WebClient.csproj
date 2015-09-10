@@ -142,6 +142,7 @@
     <Content Include="Pages\WebContent\Friends.aspx" />
     <Content Include="Pages\WebContent\GroupWall.aspx" />
     <Content Include="Pages\WebContent\Home.aspx" />
+    <Content Include="Pages\WebContent\NewsFeed.aspx" />
     <Content Include="Pages\WebContent\Search.aspx" />
     <Content Include="Pages\WebContent\UserWall.aspx" />
     <Content Include="Pages\WebContent\YourGroups.aspx" />
@@ -266,6 +267,13 @@
     </Compile>
     <Compile Include="Pages\WebContent\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WebContent\NewsFeed.aspx.cs">
+      <DependentUpon>NewsFeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WebContent\NewsFeed.aspx.designer.cs">
+      <DependentUpon>NewsFeed.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\WebContent\Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
