@@ -1,0 +1,6 @@
+Hostname 	7b1186f5-706c-45f9-bf9a-a50f0130613b.sqlserver.sequelizer.com 	
+Username 	dejrqeducpuhldzk 	
+Password 	XzXegirTuvcENCtpKuVAwRTEZEFBE2HJ2pbqjGZ83MtriKiKsHNguCbfPsmJKWnB
+
+Server 	MicrosoftSQL
+Port	1433
