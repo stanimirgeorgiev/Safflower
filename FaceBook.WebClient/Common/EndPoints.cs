@@ -8,6 +8,7 @@
         public const string GetUserWall =       "http://localhost:30446/api/users/{0}/wall";
         public const string GetGroupWall =      "http://localhost:30446/api/groups/{0}/wall";
         public const string GetUserInfo =       "http://localhost:30446/api/users/info";
+        public const string ChangeUserInfo =    "http://localhost:30446/api/users/change/UserInfo";
         public const string PostToUserWall =    "http://localhost:30446/api/user/posts";
         public const string PostComment =       "http://localhost:30446/api/posts/{0}/comments";
         public const string LikePost =          "http://localhost:30446/api/posts/{0}/likes";

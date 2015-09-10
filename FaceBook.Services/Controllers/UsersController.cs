@@ -83,6 +83,37 @@
             return this.Ok(data);
         }
 
+        [HttpPost]
+        [Route("api/users/change/UserInfo")]
+        public IHttpActionResult ChangeUserInfo(FullUserProfileDataModel model)
+        {
+            var loggedUserId = this.User.Identity.GetUserId();
+            var user = this.Data.Users.Find(loggedUserId);
+
+            user.Gender = user.Gender;
+            user.BornDate = user.BornDate;
+            user.Country = user.Country;
+            user.DetailsAboutYou = user.DetailsAboutYou;
+            user.FamilyName = user.FamilyName;
+            user.FirstName = user.FirstName;
+            user.InterestedIn = user.InterestedIn;
+            user.MiddleName = user.MiddleName;
+            user.PhoneNumber = user.MiddleName;
+            user.RelationshipStatus = user.RelationshipStatus;
+            user.Town = user.Town;
+            user.Email = user.Email;
+
+            try
+            {
+                this.Data.SaveChanges();
+                return this.Ok();
+            }
+            catch (System.Exception)
+            {
+                return this.BadRequest();
+            }
+        }
+
         [HttpGet]
         [Route("api/users/{userId}")]
         public IHttpActionResult AreUsersFriends(string userId)
@@ -155,7 +186,7 @@
             {
                 return BadRequest("You are not friends");
             }
-            
+
             friendToBeRemoved.Friends.Remove(loggedUser);
             loggedUser.Friends.Remove(friendToBeRemoved);
 
