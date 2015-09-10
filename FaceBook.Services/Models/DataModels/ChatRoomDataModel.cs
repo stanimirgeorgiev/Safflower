@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using FaceBook.Models;
+
 namespace FaceBook.Services.Models.DataModels
 {
     public class ChatRoomDataModel
