@@ -71,7 +71,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <asp:DropDownList CssClass="form-control" runat="server" ID="DropDownUserOptions" AutoPostBack="true" OnSelectedIndexChanged="DropDownUserOptions_SelectedIndexChanged">
+                                        <asp:DropDownList runat="server" ID="DropDownUserOptions" AutoPostBack="true" OnSelectedIndexChanged="DropDownUserOptions_SelectedIndexChanged">
                                             <asp:ListItem Value="~/Pages/WebContent/Home.aspx" Text="V"/>
                                             <asp:ListItem Value="~/Pages/Account/Profile.aspx" Text="Profile"/>
                                             <asp:ListItem Value="" Text="Logout" />
