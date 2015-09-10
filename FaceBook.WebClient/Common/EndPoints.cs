@@ -3,6 +3,7 @@
     public static class EndPoints
     {
         public const string Login =             "http://localhost:30446/Token";
+        public const string Logout =            "http://localhost:30446/Logout";
         public const string Register =          "http://localhost:30446/api/account/register";
         public const string GetUserWall =       "http://localhost:30446/api/users/{0}/wall";
         public const string GetGroupWall =      "http://localhost:30446/api/groups/{0}/wall";

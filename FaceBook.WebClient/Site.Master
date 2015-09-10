@@ -21,72 +21,79 @@
 
 </head>
 <body>
-<div class="container">
-    <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="respond" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
-        <div class="row">
-        <div class="navbar navbar-inverse">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Social Network</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <div class="row">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" id="AnonymusHome" href="~/">Home</a></li>
-                        <li><a runat="server" id="Login" href="~/Pages/Account/Login.aspx">Login</a></li>
-                        <li><a runat="server" id="Register" href="~/Pages/Account/Register.aspx">Register</a></li>
-                        <li><a runat="server" id="LoginHome" href="~/Pages/WebContent/Home">Home</a></li>
-                        <li><a runat="server" id="NewsFeed" href="~/Pages/WebContent/NewsFeed.aspx">News</a></li>
-                        <li>
-                            <div class="search-box" runat="server" id="PanelSearchBox"> 
-                                <asp:TextBox ValidationGroup="Search" runat="server" ID="SearchedQueryTextBox" />
-                                <asp:LinkButton CssClass="" Text="Search" ValidationGroup="Search" runat="server" OnClick="ClickSearchBox" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="SearchedQueryTextBox"
-                                    CssClass="text-danger" ErrorMessage="Field is required!" ValidationGroup="Search" />
-                            </div>
-                        </li>
-                    </ul>
+    <div class="container">
+        <form runat="server">
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                    <%--Framework Scripts--%>
+                    <asp:ScriptReference Name="MsAjaxBundle" />
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="bootstrap" />
+                    <asp:ScriptReference Name="respond" />
+                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="WebFormsBundle" />
+                    <%--Site Scripts--%>
+                </Scripts>
+            </asp:ScriptManager>
+            <div class="row">
+                <div class="navbar navbar-inverse">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" runat="server" href="~/">Social Network</a>
                         </div>
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <ul class="nav navbar-nav">
+                                    <li><a runat="server" id="AnonymusHome" href="~/">Home</a></li>
+                                    <li><a runat="server" id="Login" href="~/Pages/Account/Login.aspx">Login</a></li>
+                                    <li><a runat="server" id="Register" href="~/Pages/Account/Register.aspx">Register</a></li>
+                                    <li><a runat="server" id="LoginHome" href="~/Pages/WebContent/Home.aspx">Home</a></li>
+                                    <li><a runat="server" id="NewsFeed" href="~/Pages/WebContent/NewsFeed.aspx">News</a></li>
+                                    <li>
+                                        <div class="search-box" runat="server" id="PanelSearchBox">
+                                            <asp:TextBox ValidationGroup="Search" runat="server" ID="SearchedQueryTextBox" />
+                                            <asp:LinkButton CssClass="" Text="Search" ValidationGroup="Search" runat="server" OnClick="ClickSearchBox" />
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="SearchedQueryTextBox"
+                                                CssClass="text-danger" ErrorMessage="Field is required!" ValidationGroup="Search" />
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <asp:DropDownList runat="server" ID="DropDownUserOptions" AutoPostBack="true" OnSelectedIndexChanged="DropDownUserOptions_SelectedIndexChanged">
+                                            <asp:ListItem Value="~/Pages/WebContent/Home.aspx" Text="V"/>
+                                            <asp:ListItem Value="~/Pages/Account/Profile.aspx" Text="Profile"/>
+                                            <asp:ListItem Value="" Text="Logout" />
+                                        </asp:DropDownList>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container body-content">
+                    <asp:Label Visible="true" ID="UserAccessToken" runat="server" />
+                    <asp:Label Visible="true" ID="UserId" runat="server" />
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <hr />
+                    <footer>
+                        <p>&copy; <%: DateTime.Now.Year %> - Social Network</p>
+                    </footer>
                 </div>
             </div>
-        </div>
-        <div class="container body-content">
-            <asp:Label Visible="true" ID="UserAccessToken" runat="server" />
-            <asp:Label Visible="true" ID="UserId" runat="server" />
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Social Network</p>
-            </footer>
-        </div>
-            </div>
-    </form>
+        </form>
     </div>
 </body>
 </html>

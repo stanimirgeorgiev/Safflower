@@ -138,6 +138,7 @@
     <Content Include="Content\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Pages\Account\Login.aspx" />
+    <Content Include="Pages\Account\Profile.aspx" />
     <Content Include="Pages\Account\Register.aspx" />
     <Content Include="Pages\WebContent\Friends.aspx" />
     <Content Include="Pages\WebContent\GroupWall.aspx" />
@@ -239,6 +240,13 @@
     </Compile>
     <Compile Include="Pages\Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Account\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Account\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

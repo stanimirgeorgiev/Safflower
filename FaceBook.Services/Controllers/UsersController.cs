@@ -66,6 +66,7 @@
             {
                 UserId = loggedUserId,
                 Username = user.UserName,
+                Email = user.Email
             };
 
             return this.Ok(data);
