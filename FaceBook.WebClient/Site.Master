@@ -57,12 +57,13 @@
                 <div class="navbar-collapse collapse">
                     <div class="row">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Pages/Account/Login.aspx">Login</a></li>
-                        <li><a runat="server" href="~/Pages/Account/Register.aspx">Register</a></li>
-                        <li><a runat="server" href="~/Pages/WebContent/NewsFeed.aspx">News</a></li>
+                        <li><a runat="server" id="AnonymusHome" href="~/">Home</a></li>
+                        <li><a runat="server" id="Login" href="~/Pages/Account/Login.aspx">Login</a></li>
+                        <li><a runat="server" id="Register" href="~/Pages/Account/Register.aspx">Register</a></li>
+                        <li><a runat="server" id="LoginHome" href="~/Pages/WebContent/Home">Home</a></li>
+                        <li><a runat="server" id="NewsFeed" href="~/Pages/WebContent/NewsFeed.aspx">News</a></li>
                         <li>
-                            <div class="search-box">
+                            <div class="search-box" runat="server" id="PanelSearchBox"> 
                                 <asp:TextBox ValidationGroup="Search" runat="server" ID="SearchedQueryTextBox" />
                                 <asp:LinkButton CssClass="" Text="Search" ValidationGroup="Search" runat="server" OnClick="ClickSearchBox" />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="SearchedQueryTextBox"
