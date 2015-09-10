@@ -1,4 +1,5 @@
-﻿namespace FaceBook.Models
+﻿using System;
+namespace FaceBook.Models
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -13,36 +14,27 @@
         }
         [Key]
         [Required]
-        public int Id { get; set;}
+        public int Id { get; set; }
 
         [Required]
-        public string Name { get; set;}
+        public string Name { get; set; }
 
         public virtual ICollection<Chat> Chats
         {
             get { return this.chats; }
             set { this.chats = value; }
         }
-        [Required]
+
         public string UserId { get; set; }
         public virtual User User { get; set; }
 
-        public byte FriendsView
-        {
-            get;
-            set;
-        }
-
-        public byte LoggedUsersView
-        {
-            get;
-            set;
-        }
-
-        public byte GuestView
-        {
-            get;
-            set;
-        }
+        public ChatViewPriviliges Priviliges { get; set; }
+        public DateTime CreatedOn { get; set; }
+    }
+    public enum ChatViewPriviliges
+    {
+        PrivateChatRoom,
+        FriendsChatRoom,
+        PublicChatRoom
     }
 }
