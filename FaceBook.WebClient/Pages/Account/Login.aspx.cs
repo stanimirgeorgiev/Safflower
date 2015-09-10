@@ -49,7 +49,7 @@
                     httpClientNested.DefaultRequestHeaders.Add("Authorization", "Bearer " + loginData.Access_Token);
                     var responseNested = httpClientNested.GetAsync(EndPoints.GetUserInfo).Result;
 
-                    var userInfo = responseNested.Content.ReadAsAsync<UserBindingModel>().Result;
+                    var userInfo = responseNested.Content.ReadAsAsync<FullUserProfileData>().Result;
 
                     Session["UserId"] = userInfo.UserId;
                     Session["UserName"] = loginData.UserName;

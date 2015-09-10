@@ -7,8 +7,10 @@ namespace FaceBook.Models
     using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Enumerations;
+    using System;
 
-    public class User: IdentityUser
+    public class User : IdentityUser
     {
         private ICollection<Chat> chats;
         private ICollection<ChatRoom> chatRooms;
@@ -23,7 +25,7 @@ namespace FaceBook.Models
         public User()
         {
             this.chatRooms = new HashSet<ChatRoom>();
-            this.chats= new HashSet<Chat>();
+            this.chats = new HashSet<Chat>();
             this.commentLikes = new HashSet<CommentLike>();
             this.comments = new HashSet<Comment>();
             this.friends = new HashSet<User>();
@@ -32,6 +34,26 @@ namespace FaceBook.Models
             this.posts = new HashSet<Post>();
             this.createdgroups = new HashSet<Group>();
         }
+
+        public string FirstName { get; set; }
+
+        public string MiddleName { get; set; }
+
+        public string FamilyName { get; set; }
+
+        public string Town { get; set; }
+
+        public string Country { get; set; }
+
+        public RelationshipStatus RelationshipStatus { get; set; }
+
+        public DateTime BornDate { get; set; }
+
+        public Gender Gender { get; set; }
+
+        public Gender InterestedIn { get; set; }
+
+        public string DetailsAboutYou { get; set; }
 
         public virtual WallUser WallUser { get; set; }
 
