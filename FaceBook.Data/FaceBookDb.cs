@@ -13,6 +13,8 @@ namespace FaceBook.Data
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<FaceBookDb, Configuration>());
         }
+
+
         public DbSet<WallUser> WallsUsers { get; set; }
         public DbSet<WallGroup> WallsGroups { get; set; }
         public DbSet<Post> Posts { get; set; }
@@ -25,6 +27,9 @@ namespace FaceBook.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<FaceBookDb, Configuration>());
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
