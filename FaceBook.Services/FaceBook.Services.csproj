@@ -224,8 +224,8 @@
     <Compile Include="Models\BindingModels\GroupRemoveBindingModels.cs" />
     <Compile Include="Models\BindingModels\GroupUpdateBindingModels.cs" />
     <Compile Include="Models\BindingModels\UserSearchBindingModel.cs" />
-    <Compile Include="Models\DataModels\ChatDataModel.cs" />
     <Compile Include="Models\DataModels\ChatRoomDataModel.cs" />
+    <Compile Include="Models\DataModels\FullUserProfileDataModel.cs" />
     <Compile Include="Models\DataModels\GroupDataModel.cs" />
     <Compile Include="Models\DataModels\GroupsGetViewModels.cs" />
     <Compile Include="Models\DataModels\GroupWallDataModel.cs" />

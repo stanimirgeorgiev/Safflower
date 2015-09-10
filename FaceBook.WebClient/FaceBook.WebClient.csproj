@@ -207,7 +207,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\EndPoints.cs" />
+    <Compile Include="Common\Enumerations\Gender.cs" />
+    <Compile Include="Common\Enumerations\RelationshipStatus.cs" />
     <Compile Include="Common\Extensions.cs" />
+    <Compile Include="Models\BindingModels\FullUserProfileBindingModel.cs" />
     <Compile Include="Models\BindingModels\GroupBindingModel.cs" />
     <Compile Include="Models\BindingModels\GroupWallBindingModel.cs" />
     <Compile Include="Models\BindingModels\LoginBindingModel.cs" />

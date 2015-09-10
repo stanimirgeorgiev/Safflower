@@ -62,11 +62,22 @@
             var loggedUserId = this.User.Identity.GetUserId();
             var user = this.Data.Users.Find(loggedUserId);
 
-            var data = new UserDataModel()
+            var data = new FullUserProfileDataModel()
             {
-                UserId = loggedUserId,
-                Username = user.UserName,
-                Email = user.Email
+                Gender = user.Gender,
+                BornDate = user.BornDate,
+                Country = user.Country,
+                DetailsAboutYou = user.DetailsAboutYou,
+                FamilyName = user.FamilyName,
+                FirstName = user.FirstName,
+                InterestedIn = user.InterestedIn,
+                MiddleName = user.MiddleName,
+                PhoneNumber = user.MiddleName,
+                RelationshipStatus = user.RelationshipStatus,
+                Town = user.Town,
+                Email = user.Email,
+                UserId = user.Id,
+                Username = user.UserName
             };
 
             return this.Ok(data);
