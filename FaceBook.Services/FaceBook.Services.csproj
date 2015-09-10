@@ -200,6 +200,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
+    <Compile Include="Controllers\ChatRoomsController.cs" />
     <Compile Include="Controllers\CommentLikesController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
@@ -216,12 +218,16 @@
     <Compile Include="Models\BindingModels\AddCommentBindingModel.cs" />
     <Compile Include="Models\BindingModels\AddPostGroupWallBindingModel.cs" />
     <Compile Include="Models\BindingModels\AddPostUserWallBindingModel.cs" />
+    <Compile Include="Models\BindingModels\ChatBindingModel.cs" />
+    <Compile Include="Models\BindingModels\ChatRoomBindingModel.cs" />
     <Compile Include="Models\BindingModels\EditPostBindingModel.cs" />
     <Compile Include="Models\BindingModels\GroupAddUserBindingModels.cs" />
     <Compile Include="Models\BindingModels\GroupCreateBindingModels.cs" />
     <Compile Include="Models\BindingModels\GroupRemoveBindingModels.cs" />
     <Compile Include="Models\BindingModels\GroupUpdateBindingModels.cs" />
     <Compile Include="Models\BindingModels\UserSearchBindingModel.cs" />
+    <Compile Include="Models\DataModels\ChatDataModel.cs" />
+    <Compile Include="Models\DataModels\ChatRoomDataModel.cs" />
     <Compile Include="Models\DataModels\FullUserProfileDataModel.cs" />
     <Compile Include="Models\DataModels\GroupDataModel.cs" />
     <Compile Include="Models\DataModels\GroupsGetViewModels.cs" />
