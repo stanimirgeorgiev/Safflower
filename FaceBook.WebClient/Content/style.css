@@ -54,3 +54,9 @@ body {
 .comment-like-buttons {
     margin-bottom: 5px;
 }
+table {
+    width: 100%;
+}
+#DropDownUserOptions {
+    margin-top: 10px;
+}
