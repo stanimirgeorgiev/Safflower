@@ -45,7 +45,8 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />
+                            <span class="glyphicon glyphicon-home"></span>
+                            <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-lg btn-default" />
                         </div>
                     </div>
                 </div>

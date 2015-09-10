@@ -17,9 +17,11 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/style.css" rel="stylesheet" />
 
 </head>
 <body>
+<div class="container">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -41,8 +43,8 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="row">
+        <div class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -53,19 +55,21 @@
                     <a class="navbar-brand" runat="server" href="~/">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
+                    <div class="row">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/Pages/Account/Login.aspx">Login</a></li>
                         <li><a runat="server" href="~/Pages/Account/Register.aspx">Register</a></li>
                         <li>
-                            <div>
+                            <div class="search-box">
                                 <asp:TextBox ValidationGroup="Search" runat="server" ID="SearchedQueryTextBox" />
-                                <asp:LinkButton Text="Search" ValidationGroup="Search" runat="server" OnClick="ClickSearchBox" />
+                                <asp:LinkButton CssClass="" Text="Search" ValidationGroup="Search" runat="server" OnClick="ClickSearchBox" />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="SearchedQueryTextBox"
                                     CssClass="text-danger" ErrorMessage="Field is required!" ValidationGroup="Search" />
                             </div>
                         </li>
                     </ul>
+                        </div>
                 </div>
             </div>
         </div>
@@ -79,7 +83,8 @@
                 <p>&copy; <%: DateTime.Now.Year %> - Social Network</p>
             </footer>
         </div>
-
+            </div>
     </form>
+    </div>
 </body>
 </html>
