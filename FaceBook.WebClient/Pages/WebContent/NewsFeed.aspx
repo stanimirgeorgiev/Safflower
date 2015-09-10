@@ -32,9 +32,7 @@
             <asp:ListView runat="server" ID="ListViewNewsFeeds"
                 ItemType="FaceBook.WebClient.Models.BindingModels.PostBindingModel"
                 DataKeyNames="ID"
-                SelectMethod="Select"
-                UpdateMethod="Update"
-                DeleteMethod="Delete">
+                SelectMethod="Select">
 
                 <LayoutTemplate>
                     <div runat="server" id="itemPlaceHolder"></div>

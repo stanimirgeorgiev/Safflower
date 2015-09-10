@@ -1,9 +1,7 @@
-@using System.Web
 @using FaceBook.Services.Areas.HelpPage
 @model InvalidSample
 
-@if (
-    HttpContext.Current.IsDebuggingEnabled)
+@if (HttpContext.Current.IsDebuggingEnabled)
 {
     <div class="warning-message-container">
         <p>@Model.ErrorMessage</p>
