@@ -47,7 +47,7 @@ namespace FaceBook.Models
 
         public RelationshipStatus RelationshipStatus { get; set; }
 
-        public DateTime BornDate { get; set; }
+        public DateTime? BornDate { get; set; }
 
         public Gender Gender { get; set; }
 

@@ -339,9 +339,6 @@
                 }
 
                 return Ok();
-
-            
-            
         }
 
         // POST api/Account/RegisterExternal
