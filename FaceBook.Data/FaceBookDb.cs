@@ -27,8 +27,6 @@ namespace FaceBook.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<FaceBookDb, Configuration>());
-            base.OnModelCreating(modelBuilder);
 
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();

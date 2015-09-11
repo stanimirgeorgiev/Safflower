@@ -90,10 +90,10 @@ namespace FaceBook.Services.Controllers
         [Route("api/chatrooms")]
         public IHttpActionResult CreateChatRoomActionResult([FromBody] ChatRoomBindingModel model)
         {
-            if (model.ChatRoomName == null
-                || model.Privileges != ChatViewPrivileges.PrivateChatRoom
-                || model.Privileges != ChatViewPrivileges.FriendsChatRoom
-                || model.Privileges != ChatViewPrivileges.PublicChatRoom)
+            if (model.ChatRoomName == null ||
+                (model.Privileges != ChatViewPrivileges.PrivateChatRoom
+                && model.Privileges != ChatViewPrivileges.FriendsChatRoom
+                && model.Privileges != ChatViewPrivileges.PublicChatRoom))
             {
                 return BadRequest("ChatRoom name and privileges are mendatory.");
             }
